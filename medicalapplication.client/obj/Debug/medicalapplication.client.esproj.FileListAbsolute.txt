@@ -1,0 +1,1 @@
+c:\Users\20115\Desktop\MedicalApplication\medicalapplication.client\obj\Debug\medicalapplication.client.esproj.CoreCompileInputs.cache
