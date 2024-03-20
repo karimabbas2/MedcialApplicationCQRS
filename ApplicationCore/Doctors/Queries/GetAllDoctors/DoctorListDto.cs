@@ -19,9 +19,8 @@ namespace ApplicationCore.Doctors.Queries
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? ImageURL { get; set; }
-        public List<DoctorDepartment>? DoctorDepartments { get; set; }
-        public int? Departments { get; set; }
-        public List<ApplicationDomain.Appointment>? Appointments { get; set; }
+        public string[]? Departments { get; set; }
+        public string[]? Appointments { get; set; }
 
     }
 }

@@ -19,7 +19,7 @@ namespace ApplicationCore.Doctors.Queries.GetlDoctorById
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? ImageURL { get; set; }
-        public List<Department>? Departments { get; set; }
+        public string[] Departments { get; set; }
 
     }
 }

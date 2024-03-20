@@ -9,7 +9,7 @@ namespace ApplicationCore.Interfaces
     public interface IDoctorRepository : IGenericRepository<Doctor, string>
     {
         public Doctor GetDoctorById(string id);
-        Task <Doctor> GetDoctorByIdAsync(string id);
+        Task<Doctor> GetDoctorByIdAsync(string id);
 
     }
 }

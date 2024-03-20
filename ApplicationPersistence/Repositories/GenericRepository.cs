@@ -26,7 +26,6 @@ namespace ApplicationPersistence.Repositories
         public async Task<List<T>> GetAllAsync()
         {
             return await entities.ToListAsync();
-
         }
 
         public async Task<IEnumerable<T>> GetAllFindAsync(Expression<Func<T, bool>> expression)

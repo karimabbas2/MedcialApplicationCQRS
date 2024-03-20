@@ -12,6 +12,16 @@ namespace ApplicationPersistence.Context
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Doctor>(doctor =>
+            {
+                doctor.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
+
+            modelBuilder.Entity<Department>(dept =>
+           {
+               dept.Property(e => e.Id).ValueGeneratedOnAdd();
+           });
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
 
             modelBuilder.Entity<Department>().HasQueryFilter(d => d.DeletedBy == null);
@@ -33,7 +43,6 @@ namespace ApplicationPersistence.Context
 
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Entity.Id = Guid.NewGuid().ToString();
                     entry.Entity.CreatedAt = DateTime.Now;
                 }
                 if (entry.State == EntityState.Deleted)

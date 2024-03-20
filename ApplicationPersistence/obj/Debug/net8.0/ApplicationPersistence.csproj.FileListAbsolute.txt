@@ -1,5 +1,5 @@
-C:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationPersistence.deps.json
-C:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationPersistence.runtimeconfig.json
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationPersistence.deps.json
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationPersistence.runtimeconfig.json
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationPersistence.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationPersistence.pdb
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationCore.dll
@@ -13,9 +13,10 @@ c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.AssemblyInfoInputs.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.AssemblyInfo.cs
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.csproj.CoreCompileInputs.cache
-C:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.csproj.CopyComplete
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.sourcelink.json
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.csproj.CopyComplete
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\refint\ApplicationPersistence.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.pdb
-C:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.genruntimeconfig.cache
-C:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ref\ApplicationPersistence.dll
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.genruntimeconfig.cache
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ref\ApplicationPersistence.dll

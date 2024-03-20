@@ -1,5 +1,6 @@
 using ApplicationCore.Doctors.Commands.AddDoctor;
 using ApplicationCore.Doctors.Queries;
+using ApplicationCore.Doctors.Queries.GetlDoctorById;
 using ApplicationCore.Exceptions;
 using ApplicationCore.HandleResponse;
 using MediatR;
@@ -31,6 +32,20 @@ namespace MedicalApplication.Server.Controllers
             try
             {
                 return Ok(await _mediator.Send(new GetAllDoctorsQuery()));
+            }
+            catch (Exception)
+            {
+                // return BadRequest(new ServiceResponse(false, $"Error Message : {ex.Message}"));
+                throw;
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDoctor([FromRoute] string id)
+        {
+            try
+            {
+                return Ok(await _mediator.Send(new DoctorQuery(id)));
             }
             catch (System.Exception)
             {

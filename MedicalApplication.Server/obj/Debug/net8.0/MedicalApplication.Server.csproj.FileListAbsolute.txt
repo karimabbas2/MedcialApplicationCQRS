@@ -265,6 +265,7 @@ c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\ne
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.csproj.CoreCompileInputs.cache
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.MvcApplicationPartsAssemblyInfo.cs
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.sourcelink.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\staticwebassets.build.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\staticwebassets.development.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\staticwebassets\msbuild.MedicalApplication.Server.Microsoft.AspNetCore.StaticWebAssets.props

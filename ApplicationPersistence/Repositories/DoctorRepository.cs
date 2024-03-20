@@ -16,9 +16,16 @@ namespace ApplicationPersistence.Repositories
         {
             _myDbContext = myDbContext;
         }
+
+        //Hidding and masking this function
+        public async Task<List<Doctor>> GetAllAsync()
+        {
+            return await _myDbContext.Doctors.Include(x => x.DoctorDepartments).ThenInclude(d => d.Department).ToListAsync();
+
+        }
         public async Task<Doctor> GetDoctorByIdAsync(string id)
         {
-            return await _myDbContext.Doctors.Where(x => x.Id == id).Include(x => x.DoctorDepartments).FirstOrDefaultAsync();
+            return await _myDbContext.Doctors.Where(x => x.Id == id).Include(x => x.DoctorDepartments).ThenInclude(x => x.Department).FirstOrDefaultAsync();
         }
         Doctor IDoctorRepository.GetDoctorById(string id)
         {

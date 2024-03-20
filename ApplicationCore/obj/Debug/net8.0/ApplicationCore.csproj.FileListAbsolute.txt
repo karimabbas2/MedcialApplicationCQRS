@@ -1,4 +1,4 @@
-C:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.deps.json
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.deps.json
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.pdb
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationDomain.dll
@@ -8,8 +8,9 @@ c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\Appli
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfoInputs.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfo.cs
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.csproj.CoreCompileInputs.cache
-C:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.csproj.CopyComplete
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.sourcelink.json
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.csproj.CopyComplete
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\refint\ApplicationCore.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.pdb
-C:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ref\ApplicationCore.dll
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ref\ApplicationCore.dll

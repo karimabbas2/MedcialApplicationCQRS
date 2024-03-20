@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "10D6gTZbB+/NrvwH3Ox//6uO1PkLVD2uY/vs1NZkqkHks8NWceZMnabw6CwmygOdg/RBuar9LnZbZmiL4RV/dg==",
+  "dgSpecHash": "Rdvn5nA3huVLYG+t7cNIW0m1DA6z8Qz98nQNIkUMj7vTfoI62cALtl2Tml7rIpu6iP1rtI3cj61sK8Nbr7seTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+  "projectFilePath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\20115\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\20115\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

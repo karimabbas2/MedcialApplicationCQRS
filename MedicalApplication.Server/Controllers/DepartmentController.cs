@@ -2,6 +2,8 @@ using ApplicationCore.Departments.Commands.AddDepartment;
 using ApplicationCore.Departments.Commands.UpdateDepartment;
 using ApplicationCore.Departments.Queries.DeleteDepartment;
 using ApplicationCore.Departments.Queries.GetAllDepartments;
+using ApplicationCore.Exceptions;
+using ApplicationCore.HandleResponse;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,9 +23,9 @@ namespace MedicalApplication.Server.Controllers
             {
                 return Ok(await _mediator.Send(new GetAllDepartmentQuery()));
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                throw;
+                return BadRequest(new ServiceResponse(false, $"Error Message : {ex.Message}"));
             }
         }
 
@@ -34,10 +36,9 @@ namespace MedicalApplication.Server.Controllers
             {
                 return Ok(await _mediator.Send(addDepartmentCommand));
             }
-            catch (System.Exception)
+            catch (CustomValidationException ex)
             {
-
-                throw;
+                return BadRequest(ex._validationFailures.Select(x => new ServiceResponse(false, $"{x.ErrorCode} , {x.ErrorMessage}")));
             }
         }
 
@@ -48,10 +49,13 @@ namespace MedicalApplication.Server.Controllers
             {
                 return Ok(await _mediator.Send(updateDepartmentCommand));
             }
-            catch (System.Exception)
+            catch (CustomValidationException ex)
             {
-
-                throw;
+                return BadRequest(ex._validationFailures.Select(x => new ServiceResponse(false, $"{x.ErrorCode} , {x.ErrorMessage}")));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ServiceResponse(false, $"Error Message : {ex.Message}"));
             }
         }
 
@@ -62,9 +66,9 @@ namespace MedicalApplication.Server.Controllers
             {
                 return Ok(await _mediator.Send(new DeleteDepartmentCommand(Id)));
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                throw;
+                return BadRequest(new ServiceResponse(false, $"Error Message : {ex.Message}"));
             }
         }
 
