@@ -14,6 +14,8 @@ c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\ne
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Humanizer.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MediatR.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MediatR.Contracts.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll

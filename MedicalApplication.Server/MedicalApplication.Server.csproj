@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ApplicationPersistence\ApplicationPersistence.csproj"/>
     <ProjectReference Include="..\medicalapplication.client\medicalapplication.client.esproj">
+
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

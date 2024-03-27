@@ -3,7 +3,9 @@ using ApplicationCore.Doctors.Queries;
 using ApplicationCore.Doctors.Queries.GetlDoctorById;
 using ApplicationCore.Exceptions;
 using ApplicationCore.HandleResponse;
+using ApplicationPersistence.SeedData.Roles;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalApplication.Server.Controllers
@@ -27,6 +29,7 @@ namespace MedicalApplication.Server.Controllers
             }
         }
         [HttpGet]
+        [Authorize(Roles = "client")]
         public async Task<IActionResult> GetAllDoctors()
         {
             try
@@ -41,6 +44,7 @@ namespace MedicalApplication.Server.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = AppRoles.CLIENT)]
         public async Task<IActionResult> GetDoctor([FromRoute] string id)
         {
             try

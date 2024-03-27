@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace ApplicationPersistence.Repositories
 {
-    public abstract class GenericRepository<T, TPrimaryKey> : IGenericRepository<T, TPrimaryKey> where T : BaseEntity
+    public abstract class GenericRepository<T, TPrimaryKey> : IGenericRepository<T, TPrimaryKey> where T : class
     {
         private readonly MyDbContext _myDbContext;
         private readonly DbSet<T> entities;

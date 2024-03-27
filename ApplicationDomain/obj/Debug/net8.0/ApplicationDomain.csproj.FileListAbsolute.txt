@@ -1,6 +1,7 @@
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.deps.json
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.pdb
+c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.csproj.AssemblyReference.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.GeneratedMSBuildEditorConfig.editorconfig
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.AssemblyInfoInputs.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.AssemblyInfo.cs

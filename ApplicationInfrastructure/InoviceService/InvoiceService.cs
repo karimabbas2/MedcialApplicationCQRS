@@ -16,9 +16,6 @@ using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Fonts;
 using PdfSharp.Pdf;
-using PdfSharp.Pdf.IO;
-using PdfSharp.UniversalAccessibility.Drawing;
-using SendGrid;
 
 namespace ApplicationInfrastructure.InoviceService
 {

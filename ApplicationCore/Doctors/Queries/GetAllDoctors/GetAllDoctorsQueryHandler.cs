@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ApplicationCore.interfaces;
 using ApplicationCore.Interfaces;
 using AutoMapper;
 using MediatR;
@@ -13,6 +8,7 @@ namespace ApplicationCore.Doctors.Queries
     {
         private readonly IDoctorRepository _doctorRepository = doctorRepository;
         private readonly IMapper _mapper = mapper;
+
         public async Task<List<DoctorListDto>> Handle(GetAllDoctorsQuery request, CancellationToken cancellationToken)
         {
             var doctors = await _doctorRepository.GetAllAsync();

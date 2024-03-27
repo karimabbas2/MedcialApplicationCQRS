@@ -20,7 +20,6 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
 
             Department department = new()
             {
-                Id = Guid.NewGuid().ToString(),
                 Details = request.Details,
                 Name = request.Name,
             };

@@ -2,15 +2,44 @@ using ApplicationPersistence;
 using ApplicationPersistence.Repositories;
 using ApplicationPersistence.Services;
 using medicalapp.ApplicationPersistence;
-using ApplicationCore;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using ApplicationCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+///Add Authenticate Swagger Button
+builder.Services.AddSwaggerGen(option =>
+{
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo", Version = "v1" });
+    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter your Vaild Token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    option.AddSecurityRequirement(new OpenApiSecurityRequirement{
+        {
+            new OpenApiSecurityScheme{
+                Reference = new OpenApiReference{
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+
 builder.Services.AddPersistenceServices(builder.Configuration);
+
 // ApplicationServiceRegistration.AddApplictionCoreService(builder.Services);
 builder.Services.AddApplictionCoreService();
 // Class1.AddMyMethod(builder.Services,builder.Configuration);
@@ -24,6 +53,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminPolicy", policy => policy.RequireRole("admin"));
 
 var app = builder.Build();
 
@@ -39,6 +70,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

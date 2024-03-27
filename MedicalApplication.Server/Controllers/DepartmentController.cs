@@ -3,8 +3,11 @@ using ApplicationCore.Departments.Commands.UpdateDepartment;
 using ApplicationCore.Departments.Queries.DeleteDepartment;
 using ApplicationCore.Departments.Queries.GetAllDepartments;
 using ApplicationCore.Exceptions;
-using ApplicationCore.HandleResponse;
+using ApplicationPersistence.SeedData.Roles;
+using ApplicationPersistence.Services;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalApplication.Server.Controllers
@@ -16,6 +19,7 @@ namespace MedicalApplication.Server.Controllers
         private IMediator _mediator = mediator;
         // protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService(typeof(IMediator)) as IMediator;
 
+        [Authorize(Roles = AppRoles.ADMIN)]
         [HttpGet]
         public async Task<IActionResult> GetAllDepts()
         {

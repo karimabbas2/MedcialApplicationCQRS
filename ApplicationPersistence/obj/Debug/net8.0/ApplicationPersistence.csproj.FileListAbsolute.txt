@@ -6,8 +6,8 @@ c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationDomain.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationInfrastructure.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationDomain.pdb
-c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationCore.pdb
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationInfrastructure.pdb
+c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\bin\Debug\net8.0\ApplicationCore.pdb
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.csproj.AssemblyReference.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.GeneratedMSBuildEditorConfig.editorconfig
 c:\Users\20115\Desktop\MedicalApplication\ApplicationPersistence\obj\Debug\net8.0\ApplicationPersistence.AssemblyInfoInputs.cache
