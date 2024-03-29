@@ -9,6 +9,7 @@ namespace ApplicationCore.interfaces
 {
     public interface IDepartmentRepository : IGenericRepository<Department,string>
     {
+        Task<Department> GetDepartmentByIdAsync(string id);
         Task SomeExteraMethod();
     }
 }

@@ -27,7 +27,7 @@ namespace ApplicationCore.User.Commands.Login
                 var result = await _signInManager.PasswordSignInAsync(user, request.Password, false, false);
                 if (result.Succeeded)
                 {
-                    return new ServiceResponse(true, user.Id, user, null);
+                    return new ServiceResponse(true, user);
                 }
             }
             throw new CustomException("password is not correct");

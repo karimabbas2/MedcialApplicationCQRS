@@ -8,16 +8,19 @@ using ApplicationDomain;
 using ApplicationPersistence.SeedData.Roles;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ApplicationCore.User.Commands.Register
 {
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ServiceResponse>
     {
         private readonly UserManager<ApplicationDomain.User> _userManager;
+        private readonly IEmailSender _emailSender;
 
-        public RegisterCommandHandler(UserManager<ApplicationDomain.User> userManager)
+        public RegisterCommandHandler(UserManager<ApplicationDomain.User> userManager,IEmailSender emailSender)
         {
             _userManager = userManager;
+            _emailSender= emailSender;
 
         }
         public async Task<ServiceResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -47,7 +50,7 @@ namespace ApplicationCore.User.Commands.Register
                 }
             }
             await _userManager.AddToRoleAsync(user, AppRoles.CLIENT);
-            return new ServiceResponse(true, $"You Registerd Successfully , Welcome {user.UserName}");
+            return new ServiceResponse(true, user);
 
         }
     }

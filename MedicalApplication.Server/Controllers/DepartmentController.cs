@@ -2,10 +2,12 @@ using ApplicationCore.Departments.Commands.AddDepartment;
 using ApplicationCore.Departments.Commands.UpdateDepartment;
 using ApplicationCore.Departments.Queries.DeleteDepartment;
 using ApplicationCore.Departments.Queries.GetAllDepartments;
+using ApplicationCore.Departments.Queries.Queries;
 using ApplicationCore.Exceptions;
 using ApplicationPersistence.SeedData.Roles;
 using ApplicationPersistence.Services;
 using MediatR;
+using MedicalApplication.Server.Controllers.Base;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,18 +16,16 @@ namespace MedicalApplication.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DepartmentController(IMediator mediator) : ControllerBase
+    public class DepartmentController : ApplicationControllerBase
     {
-        private IMediator _mediator = mediator;
-        // protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService(typeof(IMediator)) as IMediator;
 
-        [Authorize(Roles = AppRoles.ADMIN)]
+        // [Authorize(Roles = AppRoles.ADMIN)]
         [HttpGet]
         public async Task<IActionResult> GetAllDepts()
         {
             try
             {
-                return Ok(await _mediator.Send(new GetAllDepartmentQuery()));
+                return MyResponseResult(await Mediator.Send(new GetAllDepartmentQuery()));
             }
             catch (Exception ex)
             {
@@ -38,7 +38,7 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                return Ok(await _mediator.Send(addDepartmentCommand));
+                return MyResponseResult(await Mediator.Send(addDepartmentCommand));
             }
             catch (CustomValidationException ex)
             {
@@ -51,7 +51,7 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                return Ok(await _mediator.Send(updateDepartmentCommand));
+                return MyResponseResult(await Mediator.Send(updateDepartmentCommand));
             }
             catch (CustomValidationException ex)
             {
@@ -68,7 +68,20 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                return Ok(await _mediator.Send(new DeleteDepartmentCommand(Id)));
+                return MyResponseResult(await Mediator.Send(new DeleteDepartmentCommand(Id)));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ServiceResponse(false, $"Error Message : {ex.Message}"));
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDept([FromRoute] string id)
+        {
+            try
+            {
+                return MyResponseResult(await Mediator.Send(new GetDepartmentById(id)));
             }
             catch (Exception ex)
             {

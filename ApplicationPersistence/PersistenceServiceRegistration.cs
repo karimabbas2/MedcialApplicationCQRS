@@ -13,6 +13,7 @@ using ApplicationPersistence.Jwt;
 using ApplicationPersistence.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -74,6 +75,8 @@ namespace medicalapp.ApplicationPersistence
             services.AddScoped<IDoctorDeptsRepository, DoctorDeptsRepository>();
             services.AddScoped<IAppointmentRepoistory, AppointmentRepository>();
             services.AddScoped<IEmail, EmailSender>();
+            services.AddTransient<IEmailSender, ApplicationInfrastructure.EmailService.SendGrid>();
+
             services.AddScoped<IFile, FileService>();
             services.AddScoped<IInvoice, InvoiceService>();
             services.AddScoped<JwtService>();

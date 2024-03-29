@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
+using MedicalApplication.Server.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalApplication.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PDFController(IMediator mediator) : ControllerBase
+    public class PDFController : ApplicationControllerBase
     {
-        private IMediator _mediator = mediator;
 
         // [HttpGet]
         // public async Task<IActionResult> GeneratePdf()

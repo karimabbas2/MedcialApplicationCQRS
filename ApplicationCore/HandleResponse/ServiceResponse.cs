@@ -9,7 +9,6 @@ namespace ApplicationCore.HandleResponse
     {
         public bool _ISuccess;
         public string? _Message;
-        public IList<string>? _Roles;
         public ApplicationDomain.User _User;
         public ServiceResponse(bool ISuccess, string Message)
         {
@@ -17,11 +16,9 @@ namespace ApplicationCore.HandleResponse
             _Message = Message;
         }
 
-        public ServiceResponse(bool ISuccess, string Message, ApplicationDomain.User user, IList<string>? Roles)
+        public ServiceResponse(bool ISuccess, ApplicationDomain.User user)
         {
             _ISuccess = ISuccess;
-            _Message = Message;
-            _Roles = Roles;
             _User = user;
         }
 

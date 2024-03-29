@@ -18,6 +18,12 @@ namespace ApplicationPersistence.Repositories
         {
             return await _myDbContext.Departments.Include(d => d.DoctorDepartments).ThenInclude(c => c.Doctor).ToListAsync();
         }
+
+        public async Task<Department> GetDepartmentByIdAsync(string id)
+        {
+            return await _myDbContext.Departments.Where(x => x.Id == id).Include(x => x.DoctorDepartments).ThenInclude(x => x.Doctor).FirstOrDefaultAsync();
+        }
+
         public Task SomeExteraMethod()
         {
             throw new NotImplementedException();

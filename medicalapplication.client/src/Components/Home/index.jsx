@@ -1,11 +1,11 @@
 import Department from "../Department"
 import Footer from "../Footer"
-import Navbar from "../Navbar"
+import ThemeNavbar from "../navbar"
 
 function Home() {
     return (
         <>
-            <Navbar />
+            <ThemeNavbar />
             <div>*******</div>
             <Department />
             <div>******</div>

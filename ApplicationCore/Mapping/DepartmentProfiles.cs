@@ -15,6 +15,11 @@ namespace ApplicationCore.Mapping
             CreateMap<Department, DepartmentListDto>()
           .ForMember(dest => dest.Doctors, opt => opt.MapFrom(src => src.DoctorDepartments.Where(d => d.DepartmentId == src.Id)
           .Select(x => x.Doctor.Name).ToList()));
+
+            CreateMap<Department, DepartmentListDto>()
+             .ForMember(dest => dest.Doctors, opt => opt.MapFrom(src => src.DoctorDepartments.Where(x => x.DepartmentId == src.Id)
+             .Select(c => c.Doctor.Name)
+             .ToList()));
         }
 
     }

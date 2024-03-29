@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace ApplicationCore.Departments.Commands.AddDepartment
 {
-    public class AddDepartmentCommand : IRequest<ServiceResponse>
+    public class AddDepartmentCommand : IRequest<ResponseResult<string>>
     {
         public string? Name { get; set; }
         public string? Details { get; set; }

@@ -13,26 +13,36 @@ using ApplicationPersistence.Dto;
 using ApplicationPersistence.Jwt;
 using ApplicationPersistence.SeedData.Roles;
 using MediatR;
+using MedicalApplication.Server.Controllers.Base;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace MedicalApplication.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthController(IMediator mediator, JwtService jwtService) : ControllerBase
+    public class AuthController(JwtService jwtService, UserManager<ApplicationDomain.User> userManager, IEmailSender emailService) : ApplicationControllerBase
     {
-        private readonly IMediator _mediator = mediator;
         private readonly JwtService _jwtService = jwtService;
+        private readonly UserManager<ApplicationDomain.User> _userManager = userManager;
+        private readonly IEmailSender _emailService = emailService;
+
+
 
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] RegisterCommand registerCommand)
         {
             try
             {
-                return Ok(await _mediator.Send(registerCommand));
+                var result = await Mediator.Send(registerCommand);
+                var link = await GenerateEmailConfirmationLinkAsync(result._User);
+                var msgHtml = $"<lable>Please click the link for confirm Email address:</lable><a href='{link}'>Confirm Email</a>";
+                await _emailService.SendEmailAsync(result._User.Email, "Confirmation Email(WebBeautyBook)", msgHtml);
+                return Ok($"Welcome {result._User.UserName}, We have sent Email Confirmation to You");
             }
             catch (CustomValidationException ex)
             {
@@ -56,7 +66,7 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                var result = await _mediator.Send(loginCommand);
+                var result = await Mediator.Send(loginCommand);
                 if (result._ISuccess)
                 {
                     var GenerateToken = await _jwtService.GenerateToken(result._Message);
@@ -116,5 +126,18 @@ namespace MedicalApplication.Server.Controllers
             }
 
         }
+
+        private async Task<string> GenerateEmailConfirmationLinkAsync(ApplicationDomain.User user)
+        {
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);//error
+            var param = new Dictionary<string, string>
+            {
+                {"token", token },
+                {"email", user.Email }
+            };
+            var confirmationLink = QueryHelpers.AddQueryString(Request.Scheme + "://" + Request.Host.Value + "/emailConfirmation", param);
+            return confirmationLink;
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using ApplicationCore.Exceptions;
 using ApplicationCore.HandleResponse;
 using ApplicationPersistence.SeedData.Roles;
 using MediatR;
+using MedicalApplication.Server.Controllers.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,16 +13,15 @@ namespace MedicalApplication.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DoctorController(IMediator mediator) : ControllerBase
+    public class DoctorController : ApplicationControllerBase
     {
-        private readonly IMediator _mediator = mediator;
 
         [HttpPost]
         public async Task<IActionResult> CreateDoctor([FromForm] AddDoctorCommand addDoctorCommand)
         {
             try
             {
-                return Ok(await _mediator.Send(addDoctorCommand));
+                return Ok(await Mediator.Send(addDoctorCommand));
             }
             catch (CustomValidationException ex)
             {
@@ -34,7 +34,7 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                return Ok(await _mediator.Send(new GetAllDoctorsQuery()));
+                return Ok(await Mediator.Send(new GetAllDoctorsQuery()));
             }
             catch (Exception)
             {
@@ -49,7 +49,7 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                return Ok(await _mediator.Send(new DoctorQuery(id)));
+                return Ok(await Mediator.Send(new DoctorQuery(id)));
             }
             catch (System.Exception)
             {
