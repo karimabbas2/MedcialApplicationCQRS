@@ -19,17 +19,10 @@ namespace MedicalApplication.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDoctor([FromForm] AddDoctorCommand addDoctorCommand)
         {
-            try
-            {
-                return Ok(await Mediator.Send(addDoctorCommand));
-            }
-            catch (CustomValidationException ex)
-            {
-                return BadRequest(ex._validationFailures.Select(x => new ServiceResponse(false, $"{x.ErrorCode} , {x.ErrorMessage}")));
-            }
+            return MyResponseResult(await Mediator.Send(addDoctorCommand));
         }
         [HttpGet]
-        [Authorize(Roles = "client")]
+        // [Authorize(Roles = "client")]
         public async Task<IActionResult> GetAllDoctors()
         {
             try
@@ -44,17 +37,10 @@ namespace MedicalApplication.Server.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = AppRoles.CLIENT)]
+        // [Authorize(Roles = AppRoles.CLIENT)]
         public async Task<IActionResult> GetDoctor([FromRoute] string id)
         {
-            try
-            {
-                return Ok(await Mediator.Send(new DoctorQuery(id)));
-            }
-            catch (System.Exception)
-            {
-                throw;
-            }
+            return Ok(await Mediator.Send(new DoctorQuery(id)));
         }
 
     }

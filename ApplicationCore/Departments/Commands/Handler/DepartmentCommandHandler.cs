@@ -24,7 +24,7 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
             //Validation
             var validator = new AddDepartmentCommandValidator();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
-            if (!validationResult.IsValid) throw new CustomValidationException(validationResult.Errors);
+            if (!validationResult.IsValid) return ResponseHandler.ValidtionErrors(validationResult.Errors[0].ToString());
 
             Department department = new()
             {
@@ -54,7 +54,7 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
             //Validation
             var validator = new UpdateDepartmentCommandValidator();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
-            if (!validationResult.IsValid) throw new CustomValidationException(validationResult.Errors);
+            if (!validationResult.IsValid) return ResponseHandler.ValidtionErrors(validationResult.Errors[0].ToString());
 
             var dept = await _departmentReposiroty.GetAsync(request.Id);
             if (dept is null) return ResponseHandler.NotFound<string>("this Departments dose not exist");

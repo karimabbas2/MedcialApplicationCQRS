@@ -79,12 +79,19 @@ Source: Conversation with Bing, 12/14/2023
 						break;
 					case KeyNotFoundException e:
 						// not found error
-						responseModel._Message = error.Message; ;
+						responseModel._Message = error.Message;
+						responseModel.Result = error.Message;
 						responseModel.StatusCode = HttpStatusCode.NotFound;
 						response.StatusCode = (int)HttpStatusCode.NotFound;
 						break;
 
 					case DbUpdateException e:
+						// can't update error
+						responseModel._Message = e.Message;
+						responseModel.StatusCode = HttpStatusCode.BadRequest;
+						response.StatusCode = (int)HttpStatusCode.BadRequest;
+						break;
+					case CustomException e:
 						// can't update error
 						responseModel._Message = e.Message;
 						responseModel.StatusCode = HttpStatusCode.BadRequest;

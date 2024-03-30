@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using ApplicationCore;
 using Microsoft.OpenApi.Models;
 using SchoolProject.Api.Middleware;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,6 +57,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthorizationBuilder()
     .AddPolicy("AdminPolicy", policy => policy.RequireRole("admin"));
+
+//Serilog
+Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+builder.Services.AddSerilog();
+
 
 var app = builder.Build();
 

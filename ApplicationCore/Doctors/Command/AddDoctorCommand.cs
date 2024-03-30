@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using ApplicationDomain;
+using ApplicationCore.HandleResponse;
+using MediatR;
 
-namespace ApplicationCore.Doctors.Queries.GetlDoctorById
+namespace ApplicationCore.Doctors.Commands.AddDoctor
 {
-    public class DoctoDto
+    public class AddDoctorCommand : IRequest<ResponseResult<string>>
     {
-        public string? Id { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }
         public string? Title { get; set; }
@@ -19,7 +21,6 @@ namespace ApplicationCore.Doctors.Queries.GetlDoctorById
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? ImageURL { get; set; }
-        public string[] Departments { get; set; }
-
+        public string[]? DoctorDepartmentsIDs { get; set; }
     }
 }

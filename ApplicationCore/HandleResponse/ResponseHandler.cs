@@ -18,13 +18,14 @@ namespace ApplicationCore.HandleResponse
             };
         }
 
-        public static ResponseResult<T> Created<T>(string message)
+        public static ResponseResult<T> Created<T>(T data)
         {
             return new ResponseResult<T>()
             {
                 StatusCode = System.Net.HttpStatusCode.Created,
                 _ISuccess = true,
-                _Message = message
+                _Message = "Created Successfully",
+                Result = data
             };
         }
 
@@ -49,6 +50,19 @@ namespace ApplicationCore.HandleResponse
 
             };
         }
+
+        public static ResponseResult<T> ValidtionErrors<T>(T data)
+        {
+            return new ResponseResult<T>()
+            {
+                StatusCode = System.Net.HttpStatusCode.BadRequest,
+                _ISuccess = false,
+                _Message = "Validation Error",
+                Result = data
+
+            };
+        }
+
 
         public static ResponseResult<T> Unauthorized<T>(string message)
         {

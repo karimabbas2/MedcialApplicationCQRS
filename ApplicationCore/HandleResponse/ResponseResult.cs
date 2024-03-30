@@ -12,7 +12,6 @@ namespace ApplicationCore.HandleResponse
         public bool _ISuccess;
         public string? _Message;
         public T Result { get; set; }
-        public ApplicationDomain.User _User;
         public ResponseResult()
         {
             
@@ -39,7 +38,6 @@ namespace ApplicationCore.HandleResponse
         public ResponseResult(bool ISuccess, ApplicationDomain.User user)
         {
             _ISuccess = ISuccess;
-            _User = user;
         }
 
     }

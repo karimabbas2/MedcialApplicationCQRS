@@ -14,24 +14,26 @@ using MediatR;
 namespace ApplicationCore.Doctors.Commands.AddDoctor
 {
     public class AddDoctorCommandHandler(IDoctorRepository doctorRepository, IDepartmentRepository departmentRepository, IDoctorDeptsRepository doctorDeptsRepository,
-    IEmail email, IMapper mapper) : IRequestHandler<AddDoctorCommand, ServiceResponse>
+    IEmail email, IMapper mapper) :
+     IRequestHandler<AddDoctorCommand, ResponseResult<string>>
     {
         private readonly IDoctorRepository _doctorRepository = doctorRepository;
         private readonly IDoctorDeptsRepository _doctorDeptsRepository = doctorDeptsRepository;
         private readonly IDepartmentRepository _departmentRepository = departmentRepository;
         private readonly IEmail _email = email;
-        private readonly IMapper _mapper =mapper;
+        private readonly IMapper _mapper = mapper;
 
-        public async Task<ServiceResponse> Handle(AddDoctorCommand request, CancellationToken cancellationToken)
+        public async Task<ResponseResult<string>> Handle(AddDoctorCommand request, CancellationToken cancellationToken)
         {
             var validator = new AddDoctorCommandValidation();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
-            if (!validationResult.IsValid) throw new CustomValidationException(validationResult.Errors);
+            if (!validationResult.IsValid) return ResponseHandler.ValidtionErrors(validationResult.Errors[0].ToString());
 
             var newDoctor = _mapper.Map<Doctor>(request);
-            
-            if (await _doctorRepository.GetAsync(newDoctor.Id) is not null) return new ServiceResponse(false, "this Doctor is exist");
+
+            if (await _doctorRepository.GetAsync(newDoctor.Id) is not null) return ResponseHandler.Conflicted<string>("this Doctor is exist");
+
             await _doctorRepository.InsertAsync(newDoctor);
 
             if (request.DoctorDepartmentsIDs is not null)
@@ -52,7 +54,7 @@ namespace ApplicationCore.Doctors.Commands.AddDoctor
                 }
             }
             // await _email.SendEmailAsync(request.Email, "Test", $"Welcome {request.Name} , this is Test");
-            return new ServiceResponse(true, "New Doctor Added Successfully");
+            return ResponseHandler.Created("New Doctor Added Successfully");
         }
     }
 }

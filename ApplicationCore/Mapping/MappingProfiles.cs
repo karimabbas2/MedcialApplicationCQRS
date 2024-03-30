@@ -24,7 +24,7 @@ namespace ApplicationCore.Mapping
             .ForMember(dest => dest.Departments, opt => opt.MapFrom(src => src.DoctorDepartments.Where(x => x.DoctorId == src.Id)
             .Select(x => x.Department.Name).ToList()));
 
-            CreateMap<Doctor, DoctoDto>()
+            CreateMap<Doctor, DoctorListDto>()
             .ForMember(dest => dest.Departments, opt => opt.MapFrom(src => src.DoctorDepartments.Where(x => x.DoctorId == src.Id)
             .Select(c => c.Department.Name)
             .ToList()));
