@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using ApplicationDomain;
+using ApplicationCore.HandleResponse;
 using ApplicationDomain.Enums;
+using MediatR;
 
-namespace ApplicationCore.Appointment.Queries.GetAllApointment
+namespace ApplicationCore.Appointment.Commands.AddAppointment
 {
-    public class AppointmentsDto
+    public class MakeAppointmentCommand : IRequest<ResponseResult<string>>
     {
-        public string? Id {get;set;}
         public DateTime ResevtionDate { get; set; }
         public AppointmentStatus AppointmentStatus { get; set; }
         public string? DoctorId { get; set; }
@@ -18,8 +18,6 @@ namespace ApplicationCore.Appointment.Queries.GetAllApointment
         public string? PatientPhone { get; set; }
         public string? PatientEmail { get; set; }
         public string? PatientNotes { get; set; }
-        public DateTime CreadtedAt { get; set; }
-        public Doctor? Doctor { get; set; }
 
     }
 }

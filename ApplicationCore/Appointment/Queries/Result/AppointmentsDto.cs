@@ -1,23 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using ApplicationCore.HandleResponse;
+using ApplicationDomain;
 using ApplicationDomain.Enums;
-using MediatR;
 
-namespace ApplicationCore.Appointment.Commands.AddAppointment
+namespace ApplicationCore.Appointment.Queries.GetAllApointment
 {
-    public class MakeAppointmentCommand : IRequest<ServiceResponse>
+    public class AppointmentsDto
     {
+        public string? Id {get;set;}
         public DateTime ResevtionDate { get; set; }
         public AppointmentStatus AppointmentStatus { get; set; }
-        public string? DoctorId { get; set; }
         public string? PatientName { get; set; }
         public string? PatientPhone { get; set; }
         public string? PatientEmail { get; set; }
         public string? PatientNotes { get; set; }
+        public DateTime CreadtedAt { get; set; }
+        public string? Doctor { get; set; }
 
     }
 }

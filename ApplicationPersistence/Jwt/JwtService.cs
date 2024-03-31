@@ -54,7 +54,7 @@ namespace ApplicationPersistence.Jwt
                 ]),
                 Issuer = _config["Jwt:Issuer"],
                 Audience = _config["Jwt:Audience"],
-                Expires = DateTime.UtcNow.AddMinutes(3),
+                Expires = DateTime.UtcNow.AddMinutes(30),
                 SigningCredentials = credentials,
                 Claims = MyClaims
             };

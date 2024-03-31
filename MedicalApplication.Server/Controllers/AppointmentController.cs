@@ -7,27 +7,20 @@ using ApplicationCore.Appointment.Queries.GetAllApointment;
 using ApplicationCore.Exceptions;
 using ApplicationCore.HandleResponse;
 using MediatR;
+using MedicalApplication.Server.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalApplication.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AppointmentController(IMediator mediator) : ControllerBase
+    public class AppointmentController : ApplicationControllerBase
     {
-        private readonly IMediator _mediator = mediator;
 
         [HttpPost]
-        public async Task<IActionResult> CreateAppointment([FromForm] MakeAppointmentCommand makeAppointmentCommand)
+        public async Task<IActionResult> CreateAppointment([FromBody] MakeAppointmentCommand makeAppointmentCommand)
         {
-            try
-            {
-                return Ok(await _mediator.Send(makeAppointmentCommand));
-            }
-            catch (CustomValidationException ex)
-            {
-                return BadRequest(ex._validationFailures.Select(x => new ServiceResponse(false, $"{x.ErrorCode} , {x.ErrorMessage}")));
-            }
+            return MyResponseResult(await Mediator.Send(makeAppointmentCommand));
         }
 
         [HttpGet]
@@ -35,11 +28,11 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
-                return Ok(await _mediator.Send(new GetAllAppointmentQuery()));
+                return MyResponseResult(await Mediator.Send(new GetAllAppointmentQuery()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                return BadRequest($"Error Message : {ex.Message}");
             }
         }
 

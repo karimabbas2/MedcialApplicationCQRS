@@ -18,7 +18,6 @@ namespace ApplicationCore.Doctors.Queries
         {
             var doctors = await _doctorRepository.GetAllAsync();
             return ResponseHandler.Success(_mapper.Map<List<DoctorListDto>>(doctors));
-
         }
 
         public async Task<ResponseResult<DoctorListDto>> Handle(DoctorQuery request, CancellationToken cancellationToken)

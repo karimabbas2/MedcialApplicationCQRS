@@ -11,13 +11,14 @@ namespace ApplicationCore
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            var MapperConfig = new MapperConfiguration(x =>
-            {
-                x.AddProfile<DepartmentProfiles>();
-                x.AddProfile<MappingProfiles>();
-            });
-            IMapper Mapper = MapperConfig.CreateMapper();
-            services.AddSingleton<IMapper>(Mapper);
+            // var MapperConfig = new MapperConfiguration(x =>
+            // {
+            //     x.AddProfile<DepartmentProfiles>();
+            //     x.AddProfile<MappingProfiles>();
+            //     x.AddProfile<AppointmentProfiles>();
+            // });
+            // IMapper Mapper = MapperConfig.CreateMapper();
+            // services.AddSingleton<IMapper>(Mapper);
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 

@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,14 +6,22 @@ using System.Threading.Tasks;
 using ApplicationCore.Interfaces;
 using ApplicationDomain;
 using ApplicationPersistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationPersistence.Repositories
 {
     public class AppointmentRepository : GenericRepository<Appointment, string>, IAppointmentRepoistory
     {
+        private readonly MyDbContext _myDbContext;
         public AppointmentRepository(MyDbContext myDbContext) : base(myDbContext)
         {
-
+            _myDbContext = myDbContext;
+        }
+        public async Task<List<Appointment>> GetAllAsync()
+        {
+            return await _myDbContext.Appointments.Include(x => x.Doctor).ToListAsync();
         }
     }
+
+
 }
