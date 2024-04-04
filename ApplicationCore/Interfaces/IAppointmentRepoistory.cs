@@ -8,6 +8,6 @@ namespace ApplicationCore.Interfaces
 {
     public interface IAppointmentRepoistory : IGenericRepository<ApplicationDomain.Appointment, string>
     {
-
+        Task<ApplicationDomain.Appointment> GetLastAppointment();
     }
 }

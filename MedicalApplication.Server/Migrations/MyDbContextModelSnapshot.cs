@@ -74,6 +74,45 @@ namespace MedicalApplication.Server.Migrations
                     b.ToTable("Appointments");
                 });
 
+            modelBuilder.Entity("ApplicationDomain.AppointmentInovice", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+
+                    b.Property<string>("AppointmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Appointment_Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Appoitnment_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Dept")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DoctorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.ToTable("AppointmentInovice");
+                });
+
             modelBuilder.Entity("ApplicationDomain.Department", b =>
                 {
                     b.Property<string>("Id")
@@ -207,47 +246,6 @@ namespace MedicalApplication.Server.Migrations
                     b.ToTable("DoctorDepartments");
                 });
 
-            modelBuilder.Entity("ApplicationDomain.Invoice", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("InvoiceDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InvoiceNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Invoices");
-                });
-
             modelBuilder.Entity("ApplicationDomain.RefreshToken", b =>
                 {
                     b.Property<int>("Id")
@@ -378,13 +376,13 @@ namespace MedicalApplication.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "81e86c28-e6d2-4ff9-9adf-f72234c03542",
+                            Id = "fdad21d2-21f4-4092-a4c7-cc77b5749227",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "a9af7f8c-f399-4550-95a8-968498018f55",
+                            Id = "b6483a54-d74f-42d6-b086-48c4a56af00a",
                             Name = "client",
                             NormalizedName = "CLIENT"
                         });
@@ -503,6 +501,15 @@ namespace MedicalApplication.Server.Migrations
                         .HasForeignKey("DoctorId");
 
                     b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("ApplicationDomain.AppointmentInovice", b =>
+                {
+                    b.HasOne("ApplicationDomain.Appointment", "Appointment")
+                        .WithMany()
+                        .HasForeignKey("AppointmentId");
+
+                    b.Navigation("Appointment");
                 });
 
             modelBuilder.Entity("ApplicationDomain.DoctorDepartment", b =>

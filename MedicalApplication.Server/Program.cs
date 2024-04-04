@@ -8,11 +8,26 @@ using ApplicationCore;
 using Microsoft.OpenApi.Models;
 using SchoolProject.Api.Middleware;
 using Serilog;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+////Allow_Origins
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+//Add Cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .WithMethods("POST", "GET", "PUT", "DELETE").WithHeaders(HeaderNames.ContentType);
+    });
+});
 
 ///Add Authenticate Swagger Button
 builder.Services.AddSwaggerGen(option =>
@@ -75,6 +90,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseMiddleware<ErrorHandlerMiddleware>();
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 

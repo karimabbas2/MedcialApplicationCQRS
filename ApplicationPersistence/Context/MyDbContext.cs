@@ -33,7 +33,7 @@ namespace ApplicationPersistence.Context
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<DoctorDepartment> DoctorDepartments { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
-        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<AppointmentInovice> AppointmentInovice { get; set; }
         public DbSet<RefreshToken> RefreshTokens {get;set;}
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

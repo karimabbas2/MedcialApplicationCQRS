@@ -5723,11 +5723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
       "projectName": "ApplicationInfrastructure",
-      "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+      "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
       "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\obj\\",
+      "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5744,8 +5744,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
-              "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
+            "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
+              "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
             },
             "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
               "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"

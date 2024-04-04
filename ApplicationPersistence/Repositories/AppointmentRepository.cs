@@ -7,6 +7,7 @@ using ApplicationCore.Interfaces;
 using ApplicationDomain;
 using ApplicationPersistence.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ApplicationPersistence.Repositories
 {
@@ -19,7 +20,12 @@ namespace ApplicationPersistence.Repositories
         }
         public async Task<List<Appointment>> GetAllAsync()
         {
-            return await _myDbContext.Appointments.Include(x => x.Doctor).ToListAsync();
+            return await _myDbContext.Appointments.AsNoTracking().Include(x => x.Doctor).ToListAsync();
+        }
+
+        public async Task<Appointment> GetLastAppointment()
+        {
+            return await _myDbContext.Appointments.Include(x => x.Doctor).OrderBy(x=>x.Id).FirstOrDefaultAsync();
         }
     }
 

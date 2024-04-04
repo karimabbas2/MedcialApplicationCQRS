@@ -1,4 +1,3 @@
-using System.Collections.Immutable;
 using System.Text;
 using ApplicationCore.interfaces;
 using ApplicationCore.Interfaces;
@@ -7,18 +6,15 @@ using ApplicationCore.Interfaces.Invoice;
 using ApplicationDomain;
 using ApplicationInfrastructure.EmailService;
 using ApplicationInfrastructure.FileService;
-using ApplicationInfrastructure.InoviceService;
 using ApplicationPersistence.Context;
 using ApplicationPersistence.Jwt;
 using ApplicationPersistence.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace medicalapp.ApplicationPersistence
@@ -78,7 +74,7 @@ namespace medicalapp.ApplicationPersistence
             services.AddTransient<IEmailSender, ApplicationInfrastructure.EmailService.SendGrid>();
 
             services.AddScoped<IFile, FileService>();
-            services.AddScoped<IInvoice, InvoiceService>();
+            services.AddScoped<IInvoice, InvoiceRepository>();
             services.AddScoped<JwtService>();
 
             // second way

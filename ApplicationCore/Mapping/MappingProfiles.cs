@@ -26,7 +26,7 @@ namespace ApplicationCore.Mapping
 
             .ForMember(dest => dest.Appointments, opt => opt.MapFrom(src => src.Appointments.Where(x => x.Doctor.Id == src.Id)
             .Select(x => new { x.ResevtionDate, x.AppointmentStatus }).ToList()));
-
+            
 
             ///Get Single Doctor
             CreateMap<Doctor, DoctorListDto>()

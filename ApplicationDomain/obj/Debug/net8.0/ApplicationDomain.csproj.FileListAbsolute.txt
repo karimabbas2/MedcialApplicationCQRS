@@ -1,4 +1,4 @@
-C:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.deps.json
+c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.deps.json
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Debug\net8.0\ApplicationDomain.pdb
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.csproj.AssemblyReference.cache
@@ -10,4 +10,4 @@ c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\App
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\refint\ApplicationDomain.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ApplicationDomain.pdb
-C:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ref\ApplicationDomain.dll
+c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\obj\Debug\net8.0\ref\ApplicationDomain.dll

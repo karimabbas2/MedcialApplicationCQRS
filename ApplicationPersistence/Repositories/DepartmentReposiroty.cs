@@ -16,12 +16,17 @@ namespace ApplicationPersistence.Repositories
 
         public async Task<List<Department>> GetAllAsync()
         {
-            return await _myDbContext.Departments.Include(d => d.DoctorDepartments).ThenInclude(c => c.Doctor).ToListAsync();
+            return await _myDbContext.Departments.AsNoTracking()
+            .Include(d => d.DoctorDepartments)
+            .ThenInclude(c => c.Doctor).ToListAsync();
         }
 
         public async Task<Department> GetDepartmentByIdAsync(string id)
         {
-            return await _myDbContext.Departments.Where(x => x.Id == id).Include(x => x.DoctorDepartments).ThenInclude(x => x.Doctor).FirstOrDefaultAsync();
+            return await _myDbContext.Departments.AsNoTracking()
+            .Where(x => x.Id == id)
+            .Include(x => x.DoctorDepartments)
+            .ThenInclude(x => x.Doctor).FirstOrDefaultAsync();
         }
 
         public Task SomeExteraMethod()

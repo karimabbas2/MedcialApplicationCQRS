@@ -10,13 +10,12 @@ using MediatR;
 
 namespace ApplicationCore.Departments.Commands.AddDepartment
 {
-    public class DepartmentCommandHandler(IDepartmentRepository departmentRepository, IInvoice invoice)
+    public class DepartmentCommandHandler(IDepartmentRepository departmentRepository)
     : IRequestHandler<AddDepartmentCommand, ResponseResult<string>>,
     IRequestHandler<UpdateDepartmentCommand, ResponseResult<string>>,
     IRequestHandler<DeleteDepartmentCommand, ResponseResult<string>>
     {
         private readonly IDepartmentRepository _departmentReposiroty = departmentRepository;
-        private readonly IInvoice _invoice = invoice;
 
         //Create Command
         public async Task<ResponseResult<string>> Handle(AddDepartmentCommand request, CancellationToken cancellationToken)
@@ -36,14 +35,6 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
                 return ResponseHandler.Conflicted<string>("this Departments is exist");
 
             await _departmentReposiroty.InsertAsync(department);
-
-            //Write Bytes of Genertited File
-            var FileContentResult = _invoice.GenerteInvoice(department);
-            byte[] fileContents = FileContentResult.FileContents;
-            string desktopFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string filePath = Path.Combine(desktopFolderPath, $"C:\\Users\\20115\\Desktop\\firstPdf\\{department.Name}.pdf");
-            File.WriteAllBytes(filePath, fileContents);
-
             return ResponseHandler.Created<string>("Department Created Successfully");
 
         }

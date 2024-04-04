@@ -27,7 +27,7 @@ namespace ApplicationPersistence.Repositories
 
         public async Task<List<DoctorDepartment>> GetAllAsyncIncluded()
         {
-            return await _myDbContext.DoctorDepartments.Include(x => x.Department).ToListAsync();
+            return await _myDbContext.DoctorDepartments.AsNoTracking().Include(x => x.Department).ToListAsync();
         }
     }
 }

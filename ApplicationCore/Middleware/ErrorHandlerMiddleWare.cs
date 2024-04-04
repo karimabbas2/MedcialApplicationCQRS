@@ -106,6 +106,7 @@ Source: Conversation with Bing, 12/14/2023
 							response.StatusCode = (int)HttpStatusCode.BadRequest;
 						}
 						responseModel._Message = e.Message;
+						responseModel.Result = e.Message;
 						responseModel._Message += e.InnerException == null ? "" : "\n" + e.InnerException.Message;
 
 						responseModel.StatusCode = HttpStatusCode.InternalServerError;

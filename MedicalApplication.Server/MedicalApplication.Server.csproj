@@ -20,6 +20,7 @@
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.6.0"/>
     <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1"/>
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1"/>
+    <PackageReference Include="PDFGenerator" Version="1.3.0"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApplicationPersistence\ApplicationPersistence.csproj"/>

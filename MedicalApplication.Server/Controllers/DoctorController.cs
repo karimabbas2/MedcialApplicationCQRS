@@ -1,12 +1,7 @@
 using ApplicationCore.Doctors.Commands.AddDoctor;
 using ApplicationCore.Doctors.Queries;
 using ApplicationCore.Doctors.Queries.GetlDoctorById;
-using ApplicationCore.Exceptions;
-using ApplicationCore.HandleResponse;
-using ApplicationPersistence.SeedData.Roles;
-using MediatR;
 using MedicalApplication.Server.Controllers.Base;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalApplication.Server.Controllers
