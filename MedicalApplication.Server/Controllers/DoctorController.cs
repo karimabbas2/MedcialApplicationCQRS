@@ -1,3 +1,4 @@
+using ApplicationCore.Doctors.Command.Commands;
 using ApplicationCore.Doctors.Commands.AddDoctor;
 using ApplicationCore.Doctors.Queries;
 using ApplicationCore.Doctors.Queries.GetlDoctorById;
@@ -12,7 +13,7 @@ namespace MedicalApplication.Server.Controllers
     {
 
         [HttpPost]
-        public async Task<IActionResult> CreateDoctor([FromForm] AddDoctorCommand addDoctorCommand)
+        public async Task<IActionResult> CreateDoctor([FromBody] AddDoctorCommand addDoctorCommand)
         {
             return MyResponseResult(await Mediator.Send(addDoctorCommand));
         }
@@ -36,6 +37,12 @@ namespace MedicalApplication.Server.Controllers
         public async Task<IActionResult> GetDoctor([FromRoute] string id)
         {
             return Ok(await Mediator.Send(new DoctorQuery(id)));
+        }
+
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> DeleteDoctor([FromRoute] string Id)
+        {
+            return MyResponseResult(await Mediator.Send(new DeleteDoctorCommand(Id)));
         }
 
     }

@@ -1,10 +1,35 @@
 import React from 'react';
 
+import {
+    PageWrapper,
+    Title,
+} from "./styles";
+
+import { DepartmentForm } from './DepartmentForm/DepartmentForm';
+import DoctorForm from './DoctorForm/DoctorForm';
+
 const MyForm = (props) => {
+
+    const handleForm = (name) => {
+        if (name === 'Doctor')
+            return DoctorForm
+        else if (name === 'Department')
+            return DepartmentForm
+        else if (name === 'Appointment')
+            return DepartmentForm
+
+    }
+    const FormComponent = handleForm(props.name);
+
     return (
-        <div>
-            Hello Form
-        </div>
+        <>
+            <PageWrapper className='mb-5' >
+                <Title >{props.formName}</Title>
+                <hr />
+                <FormComponent selectedItem={props.selectedItem} refresh={props.refresh} />
+            </PageWrapper>
+
+        </>
     );
 };
 

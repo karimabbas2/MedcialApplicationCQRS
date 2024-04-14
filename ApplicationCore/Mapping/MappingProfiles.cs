@@ -19,19 +19,10 @@ namespace ApplicationCore.Mapping
             CreateMap<AddDoctorCommand, Doctor>().AfterMap((src, dest) => dest.Name = $"Dr.{src.Name}");
 
 
-            //Get list of Doctors
+            //Get single/list of Doctors
             CreateMap<Doctor, DoctorListDto>()
             .ForMember(dest => dest.Departments, opt => opt.MapFrom(src => src.DoctorDepartments.Where(x => x.DoctorId == src.Id)
             .Select(x => x.Department.Name).ToList()))
-
-            .ForMember(dest => dest.Appointments, opt => opt.MapFrom(src => src.Appointments.Where(x => x.Doctor.Id == src.Id)
-            .Select(x => new { x.ResevtionDate, x.AppointmentStatus }).ToList()));
-            
-
-            ///Get Single Doctor
-            CreateMap<Doctor, DoctorListDto>()
-            .ForMember(dest => dest.Departments, opt => opt.MapFrom(src => src.DoctorDepartments.Where(x => x.DoctorId == src.Id)
-            .Select(c => c.Department.Name).ToList()))
 
             .ForMember(dest => dest.Appointments, opt => opt.MapFrom(src => src.Appointments.Where(x => x.Doctor.Id == src.Id)
             .Select(x => new { x.ResevtionDate, x.AppointmentStatus }).ToList()));

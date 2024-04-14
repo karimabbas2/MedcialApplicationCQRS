@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {}
+    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
         "projectName": "ApplicationDomain",
-        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\obj\\",
+        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -61,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

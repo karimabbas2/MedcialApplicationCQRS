@@ -47,16 +47,16 @@ namespace MedicalApplication.Server.Controllers
             return MyResponseResult(await Mediator.Send(updateDepartmentCommand));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteDept([FromRoute] string Id)
         {
             return MyResponseResult(await Mediator.Send(new DeleteDepartmentCommand(Id)));
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetDept([FromRoute] string id)
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetDept([FromRoute] string Id)
         {
-            return MyResponseResult(await Mediator.Send(new GetDepartmentById(id)));
+            return MyResponseResult(await Mediator.Send(new GetDepartmentById(Id)));
         }
 
     }

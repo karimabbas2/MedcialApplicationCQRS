@@ -1,0 +1,6 @@
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Release\net8.0\ApplicationCore.csproj.AssemblyReference.cache
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Release\net8.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Release\net8.0\ApplicationCore.AssemblyInfoInputs.cache
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Release\net8.0\ApplicationCore.AssemblyInfo.cs
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Release\net8.0\ApplicationCore.csproj.CoreCompileInputs.cache
+c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Release\net8.0\ApplicationCore.sourcelink.json

@@ -9,7 +9,7 @@ using MediatR;
 
 namespace ApplicationCore.Doctors.Commands.AddDoctor
 {
-    public class AddDoctorCommand : IRequest<ResponseResult<string>>
+    public class AddDoctorCommand : IRequest<ResponseResult<object>>
     {
         public string? Name { get; set; }
         public string? Surname { get; set; }

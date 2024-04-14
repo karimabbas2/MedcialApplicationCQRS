@@ -13,21 +13,9 @@ import {
 
 const MyNavbar = () => {
 
-
     return (
         <>
             <Nav justified pills tabs>
-                <NavItem>
-                    <Link to="/Doctor">Doctor</Link>
-                </NavItem>
-
-                <NavItem>
-                    <Link to="/Department">Department</Link>
-                </NavItem>
-
-                <NavItem>
-                    <Link to="/Appointment"> Appointment </Link>
-                </NavItem>
 
                 <NavItem>
                     <UncontrolledDropdown nav inNavbar>

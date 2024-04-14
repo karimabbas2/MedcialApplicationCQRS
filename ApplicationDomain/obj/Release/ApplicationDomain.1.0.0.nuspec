@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ApplicationDomain</id>
+    <version>1.0.0</version>
+    <authors>ApplicationDomain</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="40cb19011d4196a6afb6210f1da1caa4d28df80e" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.AspNetCore.Identity.EntityFrameworkCore" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="c:\Users\20115\Desktop\MedicalApplication\ApplicationDomain\bin\Release\net8.0\ApplicationDomain.dll" target="lib\net8.0\ApplicationDomain.dll" />
+  </files>
+</package>

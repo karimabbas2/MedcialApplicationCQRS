@@ -18,7 +18,7 @@ namespace ApplicationPersistence.Repositories
         public async Task DeleteAsync(TPrimaryKey primaryKey)
         {
             var entity = await entities.FindAsync(primaryKey);
-            if (entity is null) return;
+            if (entity is null) throw new Exception();
             else entities.Remove(entity);
             await _myDbContext.SaveChangesAsync();
         }

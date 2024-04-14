@@ -1,30 +1,23 @@
 import './App.css';
-import Footer from './Components/Footer';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import Doctor from './Components/Doctor';
-import Department from './Components/Department';
-import Appointment from './Components/Appointment';
 import NoMatch from './Components/NoMatch';
 import Home from './Components/Home';
+import Header from './Components/Header';
 
 function App() {
+  
   return (
     <>
       <BrowserRouter>
-        <Home />
         <Routes>
 
-          <Route path='/Doctor' index element={<Doctor />} />
-
-          <Route path='/Department' element={<Department />} />
-
-          <Route path='/Appointment' element={<Appointment />} />
-
+          <Route path='/:name' element={<Home />} />
+          <Route path='/:name/:id' element={<Home />} />
+          <Route path="/" element={<Header />} />
           <Route path="*" element={<NoMatch />} />
 
         </Routes>
-        <Footer />
+
       </BrowserRouter>
 
     </>

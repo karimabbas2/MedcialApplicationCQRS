@@ -226,14 +226,11 @@ const MyDataTable = (props) => {
         )
     }
 
-
-
-
     return (
         <>
             <Card>
-                <CardHeader className='flex-md-row flex-column align-md-items-center align-items-start border-bottom'>
-                    <CardTitle tag='h4'>
+                <CardHeader className='flex-md-row flex-column align-md-items-center align-items-start border-bottom bg-success-subtle'>
+                    <CardTitle tag='h4' >
                         {/* <img src={dataTableIcon} style={{ width: '25px' }} className='headings mr-1' /> */}
                         {tableConfig?.title}
                     </CardTitle>

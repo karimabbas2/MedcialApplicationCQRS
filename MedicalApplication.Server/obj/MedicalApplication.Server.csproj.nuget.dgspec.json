@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj": {}
+    "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
+    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj",
+        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\obj\\",
+        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
               }
             }
           }
@@ -38,6 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -113,18 +118,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
         "projectName": "ApplicationDomain",
-        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\obj\\",
+        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -147,6 +152,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -174,7 +184,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -202,11 +212,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
+              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
               },
-              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
               }
             }
           }
@@ -215,6 +225,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -266,18 +281,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
+    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
         "projectName": "ApplicationPersistence",
-        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\obj\\",
+        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -294,11 +309,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
+              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
               },
-              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
               },
               "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj": {
                 "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj"
@@ -310,6 +325,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -326,15 +346,15 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -361,18 +381,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj": {
+    "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
+        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
         "projectName": "MedicalApplication.Server",
-        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
+        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\obj\\",
+        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -389,8 +409,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
-                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj"
+              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
+                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj"
               }
             }
           }
@@ -399,6 +419,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -415,7 +440,7 @@
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -465,7 +490,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

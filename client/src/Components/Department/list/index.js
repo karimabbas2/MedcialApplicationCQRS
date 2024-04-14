@@ -1,51 +1,51 @@
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
-import { MoreVertical, Edit, Trash } from 'react-feather'
+import { MoreVertical, Edit, Trash, pic, User, Paperclip, Clock, Users, AlertCircle } from 'react-feather'
 import { Link } from 'react-router-dom'
-import moment from 'moment';
-import { useState } from 'react';
 
 const Scrolling = () => {
 
     window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-export const DepartmentColumns = () => [
+export const DepartmentColumns = (handleDelete) => [
     {
         name: '#',
-        selector: row => row.index,
+        selector: row => row.id.slice(1, 6),
     },
     {
-        name: 'Dept Name',
+        name: <span><User />Name</span>,
         selector: row => row.name,
     },
     {
-        name: 'Details',
+        name: <span><Paperclip />Details</span>,
         selector: row => row.details,
     },
     {
-        name: 'Create At',
+        name: <span><Clock />Created At</span>,
         selector: row => {
             return new Date(row.creadtedAt).toLocaleString()
         }
     },
     {
-        name: 'Doctors',
+        name: <span><Users />Doctors</span>,
         cell: row => {
-            const doctors = row.doctors
+            const columnsOfDoctors = row.doctors
+            // console.log(columnsOfDoctors)
+
             var x = 0;
             return (
                 <div className='d-flex'>
-                    <UncontrolledDropdown>
+                    <UncontrolledDropdown size='1' className="me-2" direction='start'>
                         <DropdownToggle className='pr-1' tag='span'>
                             <MoreVertical size={30} />
                         </DropdownToggle>
                         <DropdownMenu end>
 
-                            {doctors != 0 ?
+                            {columnsOfDoctors != 0 || null ?
                                 <p>
-                                    {doctors.map((doctor) => (
+                                    {columnsOfDoctors.map((doc) => (
                                         <DropdownItem className='h-100'>
-                                            <span className='align-middle mt-50 text-success' key={x + 1}>{doctor}</span>
+                                            <span className='align-middle mt-50 text-success' key={x + 1}>{doc}</span>
                                         </DropdownItem>
                                     ))}
                                 </p>
@@ -60,7 +60,7 @@ export const DepartmentColumns = () => [
         }
     },
     {
-        name: 'Actions',
+        name: <span> <AlertCircle/>Actions</span>,
         cell: row => {
             return (
                 <div className='d-flex'>
@@ -70,7 +70,7 @@ export const DepartmentColumns = () => [
                         </DropdownToggle>
                         <DropdownMenu end>
 
-                            <Link to={`/show_department/${row.id}`}>
+                            <Link to={`/Department/${row.id}`}>
                                 <DropdownItem onClick={Scrolling} className='w-100'>
                                     <Edit size={15} className='text-warning' />
                                     <span className='align-middle ml-50'>Edit</span>
@@ -78,7 +78,7 @@ export const DepartmentColumns = () => [
                             </Link>
 
                             <DropdownItem onClick={() => {
-                                // handleDelete({id: row.id})
+                                handleDelete(row.id) 
                             }} className='w-100'>
                                 <Trash size={15} className=' text-danger' />
                                 <span className='align-middle ml-50'>Delete</span>

@@ -17,7 +17,7 @@ namespace MedicalApplication.Server.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -376,13 +376,13 @@ namespace MedicalApplication.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fdad21d2-21f4-4092-a4c7-cc77b5749227",
+                            Id = "8ec3e848-8e99-4887-b177-3aa2807e53ad",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "b6483a54-d74f-42d6-b086-48c4a56af00a",
+                            Id = "45cd76e1-7c86-4e6b-b66e-a24630c1e735",
                             Name = "client",
                             NormalizedName = "CLIENT"
                         });
@@ -516,11 +516,13 @@ namespace MedicalApplication.Server.Migrations
                 {
                     b.HasOne("ApplicationDomain.Department", "Department")
                         .WithMany("DoctorDepartments")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ApplicationDomain.Doctor", "Doctor")
                         .WithMany("DoctorDepartments")
-                        .HasForeignKey("DoctorId");
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Department");
 

@@ -11,7 +11,7 @@ c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\ne
 c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\ApplicationInfrastructure.AssemblyInfo.cs
 c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\ApplicationInfrastructure.csproj.CoreCompileInputs.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\ApplicationInfrastructure.sourcelink.json
-c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\ApplicationInfrastructure.csproj.CopyComplete
+c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\Applicat.A5CEFEEF.Up2Date
 c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\ApplicationInfrastructure.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\refint\ApplicationInfrastructure.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationInfrastructure\obj\Debug\net8.0\ApplicationInfrastructure.pdb

@@ -7,7 +7,7 @@ using MediatR;
 
 namespace ApplicationCore.Departments.Commands.UpdateDepartment
 {
-    public class UpdateDepartmentCommand : IRequest<ResponseResult<string>>
+    public class UpdateDepartmentCommand : IRequest<ResponseResult<object>>
     {
         public string Id{get;set;}
         public string? Name { get; set; }

@@ -7,7 +7,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { reducers } from './Reducers';
 import { legacy_createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import {thunk} from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 import './@core/assets/fonts/feather/iconfont.css'
 // import './@core/scss/core.scss'
 import './assets/scss/style.scss'
@@ -19,8 +19,9 @@ const store = legacy_createStore(reducers, compose(applyMiddleware(thunk)));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
 
+      <App />
+    
   </Provider>
 );
 

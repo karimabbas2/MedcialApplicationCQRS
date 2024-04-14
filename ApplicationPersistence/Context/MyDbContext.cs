@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace ApplicationPersistence.Context
 {
-    public class MyDbContext(DbContextOptions<MyDbContext> options) : IdentityDbContext<User,IdentityRole,string>(options)
+    public class MyDbContext(DbContextOptions<MyDbContext> options) : IdentityDbContext<User, IdentityRole, string>(options)
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,9 +21,16 @@ namespace ApplicationPersistence.Context
 
             modelBuilder.InsertRoles();
 
-            modelBuilder.Entity<Department>().HasQueryFilter(d => d.DeletedBy == null);
-            modelBuilder.Entity<Doctor>().HasQueryFilter(d => d.DeletedBy == null);
-            modelBuilder.Entity<DoctorDepartment>().HasQueryFilter(d => d.DeletedBy == null);
+            modelBuilder.Entity<Department>().HasQueryFilter(d => d.DeletedBy == null)
+            .HasMany(D => D.DoctorDepartments)
+            .WithOne(d => d.Department)
+            .OnDelete(DeleteBehavior.Cascade);
+
+
+            modelBuilder.Entity<Doctor>().HasQueryFilter(d => d.DeletedBy == null)
+            .HasMany(D => D.DoctorDepartments)
+            .WithOne(d => d.Doctor)
+            .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -34,7 +41,7 @@ namespace ApplicationPersistence.Context
         public DbSet<DoctorDepartment> DoctorDepartments { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<AppointmentInovice> AppointmentInovice { get; set; }
-        public DbSet<RefreshToken> RefreshTokens {get;set;}
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
