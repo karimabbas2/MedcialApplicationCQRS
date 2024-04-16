@@ -10,7 +10,7 @@ namespace ApplicationDomain
     {
         public string? Name { get; set; }
         public string? Details { get; set; }
-       public List<DoctorDepartment>? DoctorDepartments {get;set;}
+        public List<Doctor>? Doctors { get; set; }
 
     }
 }

@@ -35,7 +35,11 @@ namespace ApplicationPersistence.Repositories
 
         public async Task<T> GetAsync(TPrimaryKey primaryKey)
         {
-            return await entities.FindAsync(primaryKey);
+
+            var entity = await entities.FindAsync(primaryKey);
+            if (entity is not null)
+                _myDbContext.Entry(entity).State = EntityState.Detached;
+            return entity;
         }
 
         public async Task<T> GetFirstAsync(Expression<Func<T, bool>> expression)
@@ -51,7 +55,6 @@ namespace ApplicationPersistence.Repositories
 
         public async Task UpdateAsync(TPrimaryKey primaryKey, T t)
         {
-            _myDbContext.Entry(t).State = EntityState.Detached;
             _myDbContext.Entry(t).State = EntityState.Modified;
             await _myDbContext.SaveChangesAsync();
         }

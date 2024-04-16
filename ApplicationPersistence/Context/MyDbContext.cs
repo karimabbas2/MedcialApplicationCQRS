@@ -22,15 +22,15 @@ namespace ApplicationPersistence.Context
             modelBuilder.InsertRoles();
 
             modelBuilder.Entity<Department>().HasQueryFilter(d => d.DeletedBy == null)
-            .HasMany(D => D.DoctorDepartments)
+            .HasMany(D => D.Doctors)
             .WithOne(d => d.Department)
             .OnDelete(DeleteBehavior.Cascade);
 
 
             modelBuilder.Entity<Doctor>().HasQueryFilter(d => d.DeletedBy == null)
-            .HasMany(D => D.DoctorDepartments)
-            .WithOne(d => d.Doctor)
-            .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(D => D.Department)
+            .WithMany(D => D.Doctors)
+            .OnDelete(DeleteBehavior.SetNull);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -38,7 +38,6 @@ namespace ApplicationPersistence.Context
         public override DbSet<IdentityRole> Roles { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<DoctorDepartment> DoctorDepartments { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<AppointmentInovice> AppointmentInovice { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }

@@ -19,7 +19,7 @@ namespace ApplicationCore.Doctors.Queries
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? ImageURL { get; set; }
-        public string[]? Departments { get; set; }
+        public string? Department { get; set; }
         public string[]? Appointments { get; set; }
 
     }

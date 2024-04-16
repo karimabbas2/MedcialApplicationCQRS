@@ -21,6 +21,6 @@ namespace ApplicationCore.Doctors.Commands.AddDoctor
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? ImageURL { get; set; }
-        public string[]? DoctorDepartmentsIDs { get; set; }
+        public string? DepartmentID { get; set; }
     }
 }

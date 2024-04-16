@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using ApplicationCore.Doctors.Command.Commands;
 using FluentValidation;
 
-namespace ApplicationCore.Doctors.Commands.AddDoctor
+namespace ApplicationCore.Doctors.Command.Validations
 {
-    public class AddDoctorCommandValidation : AbstractValidator<AddDoctorCommand>
+    public class UpdateDoctorCommandValidation : AbstractValidator<UpdateDoctorCommand>
     {
-        public AddDoctorCommandValidation()
+        public UpdateDoctorCommandValidation()
         {
             RuleFor(x => x.Name).NotNull().WithMessage("Name is required.");
             RuleFor(x => x.Surname).NotNull().WithMessage("Surname is required.");

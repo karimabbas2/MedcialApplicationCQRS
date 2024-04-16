@@ -166,6 +166,9 @@ namespace MedicalApplication.Server.Migrations
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -204,46 +207,9 @@ namespace MedicalApplication.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctors");
-                });
-
-            modelBuilder.Entity("ApplicationDomain.DoctorDepartment", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DepartmentId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DoctorId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("DepartmentId");
 
-                    b.HasIndex("DoctorId");
-
-                    b.ToTable("DoctorDepartments");
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("ApplicationDomain.RefreshToken", b =>
@@ -376,13 +342,13 @@ namespace MedicalApplication.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8ec3e848-8e99-4887-b177-3aa2807e53ad",
+                            Id = "f7396d0e-ff83-438c-9961-bddca28a9c70",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "45cd76e1-7c86-4e6b-b66e-a24630c1e735",
+                            Id = "4329b7ba-9468-4f69-9a4b-85beb4b0b8a9",
                             Name = "client",
                             NormalizedName = "CLIENT"
                         });
@@ -512,21 +478,14 @@ namespace MedicalApplication.Server.Migrations
                     b.Navigation("Appointment");
                 });
 
-            modelBuilder.Entity("ApplicationDomain.DoctorDepartment", b =>
+            modelBuilder.Entity("ApplicationDomain.Doctor", b =>
                 {
                     b.HasOne("ApplicationDomain.Department", "Department")
-                        .WithMany("DoctorDepartments")
+                        .WithMany("Doctors")
                         .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ApplicationDomain.Doctor", "Doctor")
-                        .WithMany("DoctorDepartments")
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Department");
-
-                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("ApplicationDomain.RefreshToken", b =>
@@ -591,14 +550,12 @@ namespace MedicalApplication.Server.Migrations
 
             modelBuilder.Entity("ApplicationDomain.Department", b =>
                 {
-                    b.Navigation("DoctorDepartments");
+                    b.Navigation("Doctors");
                 });
 
             modelBuilder.Entity("ApplicationDomain.Doctor", b =>
                 {
                     b.Navigation("Appointments");
-
-                    b.Navigation("DoctorDepartments");
                 });
 #pragma warning restore 612, 618
         }

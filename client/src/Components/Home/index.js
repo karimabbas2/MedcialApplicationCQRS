@@ -60,7 +60,7 @@ const Home = () => {
         }).then(() => {
             if (name === 'Department')
                 dispatch(deleteDept(Id))
-            if (name === 'Doctor')
+            else if (name === 'Doctor')
                 dispatch(deleteDoctor(Id))
         })
     }
@@ -69,10 +69,10 @@ const Home = () => {
         if (name === 'Department') {
             dispatch(getAllDepts(handleDelete));
         }
-        if (name === 'Doctor') {
+        else if (name === 'Doctor') {
             dispatch(getAllDoctors(handleDelete));
         }
-        if (name === 'Appointment') {
+        else if (name === 'Appointment') {
             dispatch(getAllAppoint(handleDelete));
         }
 
@@ -84,14 +84,17 @@ const Home = () => {
             type: 'Get_Dept',
             id
         })
+        // dispatch({
+        //     type: 'Get_Doctor',
+        //     id
+        // })
     }, [id])
 
     const Refresh = () => {
         navigate(`/${name}`)
     };
 
-    // console.log(myStore)
-
+    console.log(myStore)
 
     return (
         <>

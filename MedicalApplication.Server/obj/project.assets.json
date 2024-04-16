@@ -13829,11 +13829,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
+      "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
       "projectName": "MedicalApplication.Server",
-      "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
+      "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
       "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\obj\\",
+      "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -13850,8 +13850,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
-              "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj"
+            "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
+              "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj"
             }
           }
         }

@@ -7,7 +7,7 @@
 namespace MedicalApplication.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Seed : Migration
+    public partial class Iniat1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,15 +15,24 @@ namespace MedicalApplication.Server.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "b771408b-cc7d-4fd3-9eed-7190451f9268");
+                keyValue: "3f6e0706-ab55-43ba-a1be-5e57288d1984");
+
+            migrationBuilder.DeleteData(
+                table: "AspNetRoles",
+                keyColumn: "Id",
+                keyValue: "a619c50f-927e-4531-b02a-507d810053d2");
+
+            migrationBuilder.DropColumn(
+                name: "DepartmetnId",
+                table: "Doctors");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "4100093c-7b21-4ea0-b07e-490f9b95b5e0", null, "client", "CLIENT" },
-                    { "f2e82b71-8490-4512-8163-5a10eef1daf2", null, "admin", "ADMIN" }
+                    { "1d1e4da6-090a-448a-96c7-cae6a8072608", null, "admin", "ADMIN" },
+                    { "2d408698-ce0b-4996-b241-d230ff5b7125", null, "client", "CLIENT" }
                 });
         }
 
@@ -33,17 +42,27 @@ namespace MedicalApplication.Server.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "4100093c-7b21-4ea0-b07e-490f9b95b5e0");
+                keyValue: "1d1e4da6-090a-448a-96c7-cae6a8072608");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "f2e82b71-8490-4512-8163-5a10eef1daf2");
+                keyValue: "2d408698-ce0b-4996-b241-d230ff5b7125");
+
+            migrationBuilder.AddColumn<string>(
+                name: "DepartmetnId",
+                table: "Doctors",
+                type: "nvarchar(max)",
+                nullable: true);
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "b771408b-cc7d-4fd3-9eed-7190451f9268", null, "admin", "admin" });
+                values: new object[,]
+                {
+                    { "3f6e0706-ab55-43ba-a1be-5e57288d1984", null, "client", "CLIENT" },
+                    { "a619c50f-927e-4531-b02a-507d810053d2", null, "admin", "ADMIN" }
+                });
         }
     }
 }

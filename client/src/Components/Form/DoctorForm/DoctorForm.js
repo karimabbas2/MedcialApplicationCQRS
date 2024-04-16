@@ -12,13 +12,13 @@ import { Phone } from 'react-feather';
 import { Form, Formik } from 'formik';
 import { Button, Container, Col, Row, Input } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addDoctor } from '../../Doctor/store/action';
+import { addDoctor, updateDoctor } from '../../Doctor/store/action';
 import { getAllDepts } from '../../Department/store/action';
 
 const DoctorForm = (props) => {
 
     const dispatch = useDispatch();
-
+    const AllDepts = useSelector(state => state.DepartmentsStore);
 
     const [doctorInputs, setDoctorInputs] = useState({
         name: '',
@@ -31,7 +31,7 @@ const DoctorForm = (props) => {
         phone: '',
         email: '',
         imageURL: '',
-        doctorDepartmentsIDs: []
+        DepartmentID: ''
     })
 
     const docInputsSchema = yup.object({
@@ -58,26 +58,35 @@ const DoctorForm = (props) => {
             phone: '',
             email: '',
             imageURL: '',
-            doctorDepartmentsIDs: []
+            DepartmentID: []
         });
         props.refresh()
     }
 
-    const handleSelectedDept = (e) => {
-        console.log((e.target.value));
-        setDoctorInputs({ ...doctorInputs, doctorDepartmentsIDs: [e.target.value] })
-    }
+    // const handleSelectedDept = (e) => {
+    //     console.log((e.target.value));
+    //     setDoctorInputs({ ...doctorInputs, DepartmentID: e.target.value })
+    // }
 
     useEffect(() => {
         dispatch(getAllDepts())
     }, [dispatch]);
 
-    const AllDepts = useSelector(state => state.DepartmentsStore);
+
+    useEffect(() => {
+        if (props.selectedItem) {
+            setDoctorInputs({ ...doctorInputs, ...props.selectedItem })
+        }
+
+    }, [props.selectedItem]);
 
     const handleSubmit = (values) => {
-        console.log(doctorInputs);
-
+        // console.log(props.selectedItem);
+        // if (props.selectedItem) {
+        //     dispatch(updateDoctor(doctorInputs))
+        // } else {
         dispatch(addDoctor(doctorInputs))
+        // }
         resetForm();
     }
 
@@ -246,9 +255,10 @@ const DoctorForm = (props) => {
                         <Row className='mt-3 w-100 ms-0'>
                             <Input
                                 id="exampleSelect"
-                                name="doctorDepartmentsIDs"
+                                name="DepartmentID"
                                 type="select"
-                                onChange={handleSelectedDept}
+                                onInput={handleData}
+
                             >
                                 <option value={null}>choose Department</option>
                                 {AllDepts.data?.map((dept) => (
@@ -281,8 +291,8 @@ const DoctorForm = (props) => {
                         </Submit>
 
                         <Button type="reset" className='btn btn-warning w-100 mt-2' onClick={() => { resetForm() }}>
-                                Reset
-                            </Button>
+                            Reset
+                        </Button>
 
                     </Form>
                 )}

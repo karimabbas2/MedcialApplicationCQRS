@@ -119,3 +119,36 @@ export const deleteDoctor = (id) => async (dispatch) => {
         return 'error'
     })
 }
+
+
+export const updateDoctor = (doctor) => {
+    return async dispatch => {
+        await api.UpdateDoctor(doctor).then((res) => {
+            if (res.status === 200) {
+                MySwal.fire({
+                    icon: 'success',
+                    title: 'Item Modified !',
+                    text: 'Item has benn Modified Successfully.',
+                    customClass: {
+                        confirmButton: 'btn btn-success'
+                    }
+                })
+                const data = res.data.result
+                dispatch({
+                    type: 'Update_Doctor',
+                    data,
+                })
+            }
+        }).catch(() => {
+            MySwal.fire({
+                icon: 'error',
+                title: 'Faild!',
+                text: 'Faild to Modify , Bad Request',
+                customClass: {
+                    confirmButton: 'btn btn-danger'
+                }
+            })
+            return 'error'
+        })
+    }
+}

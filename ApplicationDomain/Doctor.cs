@@ -18,7 +18,8 @@ namespace ApplicationDomain
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? ImageURL { get; set; }
-        public List<DoctorDepartment>? DoctorDepartments {get;set;}
+        public string? DepartmentId { get;set;}
+        public Department? Department {get;set;}
         public List<Appointment>? Appointments {get;set;}
 
     }

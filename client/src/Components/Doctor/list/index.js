@@ -38,7 +38,7 @@ export const DoctorsColumns = (handleDeleteDoctor) => [
         name: <span><Compass />Depts</span>,
         width: '100px',
         cell: row => {
-            const columnsOfDepts = row.departments
+            const columnsOfDepts = row.department
             // console.log(columnsOfDepts)
             var y = 0;
             return (
@@ -49,13 +49,11 @@ export const DoctorsColumns = (handleDeleteDoctor) => [
                         </DropdownToggle>
                         <DropdownMenu end>
 
-                            {columnsOfDepts != 0 || null ?
+                            {columnsOfDepts !== null ?
                                 <p>
-                                    {columnsOfDepts.map((dept) => (
-                                        <DropdownItem className='h-100'>
-                                            <span className='align-middle mt-50 text-success' key={y + 1}>{dept}</span>
-                                        </DropdownItem>
-                                    ))}
+                                    <DropdownItem className='h-100'>
+                                        <span className='align-middle mt-50 text-success' key={y + 1}>{columnsOfDepts}</span>
+                                    </DropdownItem>
                                 </p>
                                 :
                                 <span className='align-middle mt-50 text-danger'>No departments</span>
@@ -78,7 +76,7 @@ export const DoctorsColumns = (handleDeleteDoctor) => [
                         </DropdownToggle>
                         <DropdownMenu end>
 
-                            <Link to={`/show_department/${row.id}`}>
+                            <Link to={`/Doctor/${row.id}`}>
                                 <DropdownItem onClick={Scrolling} className='w-100'>
                                     <Edit size={15} className='text-warning' />
                                     <span className='align-middle ml-50'>Edit</span>

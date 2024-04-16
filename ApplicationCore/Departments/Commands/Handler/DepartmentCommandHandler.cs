@@ -28,19 +28,13 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid) return ResponseHandler.ValidtionErrors<object>(validationResult.Errors[0].ToString());
 
-            Department department = new()
-            {
-                Details = request.Details,
-                Name = request.Name,
-            };
+            var department = _mapper.Map<Department>(request);
 
             if (await _departmentReposiroty.GetAsync(department.Id) is not null)
                 return ResponseHandler.Conflicted<object>("this Departments is exist");
 
             await _departmentReposiroty.InsertAsync(department);
-            var result = _mapper.Map<DepartmentListDto>(department);
-
-            return ResponseHandler.Created<object>(result);
+            return ResponseHandler.Created<object>(_mapper.Map<DepartmentListDto>(department));
 
         }
 
@@ -55,12 +49,10 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
             var dept = await _departmentReposiroty.GetAsync(request.Id);
             if (dept is null) return ResponseHandler.NotFound<object>("this Departments dose not exist");
 
-            dept.Name = request.Name;
-            dept.Details = request.Details;
-
-            await _departmentReposiroty.UpdateAsync(request.Id, dept);
-            var result = _mapper.Map<DepartmentListDto>(dept);
-            return ResponseHandler.Success<object>(result);
+            var UpdatedDept = _mapper.Map<Department>(request);
+            await _departmentReposiroty.UpdateAsync(request.Id, UpdatedDept);
+            
+            return ResponseHandler.Success<object>(_mapper.Map<DepartmentListDto>(UpdatedDept));
         }
 
         //Delete Command

@@ -34,10 +34,12 @@ export const DepartmentForm = (props) => {
         if (props.selectedItem) {
             console.log(values)
             dispatch(updateDept(deptInputs))
+            resetForm()
+
         } else {
             dispatch(addDept(deptInputs))
+            resetForm()
         }
-        resetForm()
 
     }
     const resetForm = () => {

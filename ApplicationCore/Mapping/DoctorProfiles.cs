@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApplicationCore.Departments.Queries.GetAllDepartments;
+using ApplicationCore.Doctors.Command.Commands;
 using ApplicationCore.Doctors.Commands.AddDoctor;
 using ApplicationCore.Doctors.Queries;
 using ApplicationCore.Doctors.Queries.GetlDoctorById;
@@ -11,18 +12,21 @@ using AutoMapper;
 
 namespace ApplicationCore.Mapping
 {
-    public class MappingProfiles : Profile
+    public class DoctorProfiles : Profile
     {
-        public MappingProfiles()
+        public DoctorProfiles()
         {
             //Add Doctor
-            CreateMap<AddDoctorCommand, Doctor>().AfterMap((src, dest) => dest.Name = $"Dr.{src.Name}");
+            CreateMap<AddDoctorCommand, Doctor>()
+            .ForMember(dest => dest.DepartmentId, opt => opt.MapFrom(src => src.DepartmentID))
+            .AfterMap((src, dest) => dest.Name = $"Dr.{src.Name}");
 
+            //Update
+            CreateMap<UpdateDoctorCommand, Doctor>();
 
             //Get single/list of Doctors
             CreateMap<Doctor, DoctorListDto>()
-            .ForMember(dest => dest.Departments, opt => opt.MapFrom(src => src.DoctorDepartments.Where(x => x.DoctorId == src.Id)
-            .Select(x => x.Department.Name).ToList()))
+            .ForMember(dest => dest.Department, opt => opt.MapFrom(src => src.Department.Name))
 
             .ForMember(dest => dest.Appointments, opt => opt.MapFrom(src => src.Appointments.Where(x => x.Doctor.Id == src.Id)
             .Select(x => new { x.ResevtionDate, x.AppointmentStatus }).ToList()));

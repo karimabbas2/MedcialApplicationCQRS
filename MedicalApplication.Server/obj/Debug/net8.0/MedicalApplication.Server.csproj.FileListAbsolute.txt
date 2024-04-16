@@ -2,8 +2,8 @@ c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\ne
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\appsettings.Development.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\appsettings.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.exe
-c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.deps.json
-c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.runtimeconfig.json
+C:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.deps.json
+C:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.runtimeconfig.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MedicalApplication.Server.pdb
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\AutoMapper.dll
@@ -314,9 +314,9 @@ c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\ne
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MedicalApplication.Server.props
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\staticwebassets.pack.json
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\scopedcss\bundle\MedicalApplication.Server.styles.css
-c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalA.115CB099.Up2Date
+C:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalA.115CB099.Up2Date
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\refint\MedicalApplication.Server.dll
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.pdb
-c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.genruntimeconfig.cache
-c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\ref\MedicalApplication.Server.dll
+C:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.genruntimeconfig.cache
+C:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\ref\MedicalApplication.Server.dll

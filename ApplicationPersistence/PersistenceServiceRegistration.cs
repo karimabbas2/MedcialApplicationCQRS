@@ -68,7 +68,6 @@ namespace medicalapp.ApplicationPersistence
             //frist way
             services.AddScoped<IDepartmentRepository, DepartmentReposiroty>();
             services.AddScoped<IDoctorRepository, DoctorRepository>();
-            services.AddScoped<IDoctorDeptsRepository, DoctorDeptsRepository>();
             services.AddScoped<IAppointmentRepoistory, AppointmentRepository>();
             services.AddScoped<IEmail, EmailSender>();
             services.AddTransient<IEmailSender, ApplicationInfrastructure.EmailService.SendGrid>();

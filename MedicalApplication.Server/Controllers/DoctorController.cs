@@ -32,6 +32,12 @@ namespace MedicalApplication.Server.Controllers
             }
         }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateDoctor([FromBody] UpdateDoctorCommand updateDoctorCommand)
+        {
+            return MyResponseResult(await Mediator.Send(updateDoctorCommand));
+        }
+
         [HttpGet("{id}")]
         // [Authorize(Roles = AppRoles.CLIENT)]
         public async Task<IActionResult> GetDoctor([FromRoute] string id)

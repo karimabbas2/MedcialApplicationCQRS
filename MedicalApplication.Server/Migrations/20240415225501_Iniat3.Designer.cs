@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MedicalApplication.Server.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240325214540_RefreshToken")]
-    partial class RefreshToken
+    [Migration("20240415225501_Iniat3")]
+    partial class Iniat3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -77,6 +77,45 @@ namespace MedicalApplication.Server.Migrations
                     b.ToTable("Appointments");
                 });
 
+            modelBuilder.Entity("ApplicationDomain.AppointmentInovice", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+
+                    b.Property<string>("AppointmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Appointment_Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Appoitnment_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Dept")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DoctorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.ToTable("AppointmentInovice");
+                });
+
             modelBuilder.Entity("ApplicationDomain.Department", b =>
                 {
                     b.Property<string>("Id")
@@ -130,6 +169,9 @@ namespace MedicalApplication.Server.Migrations
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -168,87 +210,9 @@ namespace MedicalApplication.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctors");
-                });
-
-            modelBuilder.Entity("ApplicationDomain.DoctorDepartment", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DepartmentId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DoctorId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("DepartmentId");
 
-                    b.HasIndex("DoctorId");
-
-                    b.ToTable("DoctorDepartments");
-                });
-
-            modelBuilder.Entity("ApplicationDomain.Invoice", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("InvoiceDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InvoiceNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Invoices");
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("ApplicationDomain.RefreshToken", b =>
@@ -381,13 +345,13 @@ namespace MedicalApplication.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "81e86c28-e6d2-4ff9-9adf-f72234c03542",
+                            Id = "f7396d0e-ff83-438c-9961-bddca28a9c70",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "a9af7f8c-f399-4550-95a8-968498018f55",
+                            Id = "4329b7ba-9468-4f69-9a4b-85beb4b0b8a9",
                             Name = "client",
                             NormalizedName = "CLIENT"
                         });
@@ -508,19 +472,23 @@ namespace MedicalApplication.Server.Migrations
                     b.Navigation("Doctor");
                 });
 
-            modelBuilder.Entity("ApplicationDomain.DoctorDepartment", b =>
+            modelBuilder.Entity("ApplicationDomain.AppointmentInovice", b =>
+                {
+                    b.HasOne("ApplicationDomain.Appointment", "Appointment")
+                        .WithMany()
+                        .HasForeignKey("AppointmentId");
+
+                    b.Navigation("Appointment");
+                });
+
+            modelBuilder.Entity("ApplicationDomain.Doctor", b =>
                 {
                     b.HasOne("ApplicationDomain.Department", "Department")
-                        .WithMany("DoctorDepartments")
-                        .HasForeignKey("DepartmentId");
-
-                    b.HasOne("ApplicationDomain.Doctor", "Doctor")
-                        .WithMany("DoctorDepartments")
-                        .HasForeignKey("DoctorId");
+                        .WithMany("Doctors")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Department");
-
-                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("ApplicationDomain.RefreshToken", b =>
@@ -585,14 +553,12 @@ namespace MedicalApplication.Server.Migrations
 
             modelBuilder.Entity("ApplicationDomain.Department", b =>
                 {
-                    b.Navigation("DoctorDepartments");
+                    b.Navigation("Doctors");
                 });
 
             modelBuilder.Entity("ApplicationDomain.Doctor", b =>
                 {
                     b.Navigation("Appointments");
-
-                    b.Navigation("DoctorDepartments");
                 });
 #pragma warning restore 612, 618
         }

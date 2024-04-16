@@ -18,7 +18,7 @@ namespace ApplicationPersistence.Repositories
         {
             return await _myDbContext.Doctors.AsNoTracking()
             .Include(x => x.Appointments)
-            .Include(x => x.DoctorDepartments).ThenInclude(d => d.Department)
+            .Include(d => d.Department)
             .ToListAsync();
 
         }
@@ -32,8 +32,7 @@ namespace ApplicationPersistence.Repositories
         {
             return await _myDbContext.Doctors.AsNoTracking().Where(x => x.Id == id)
             .Include(x => x.Appointments)
-            .Include(x => x.DoctorDepartments)
-            .ThenInclude(x => x.Department).FirstOrDefaultAsync();
+            .Include(x => x.Department).FirstOrDefaultAsync();
         }
     }
 }
