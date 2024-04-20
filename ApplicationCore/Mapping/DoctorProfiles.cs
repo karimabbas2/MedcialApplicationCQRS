@@ -22,11 +22,13 @@ namespace ApplicationCore.Mapping
             .AfterMap((src, dest) => dest.Name = $"Dr.{src.Name}");
 
             //Update
-            CreateMap<UpdateDoctorCommand, Doctor>();
+            CreateMap<UpdateDoctorCommand, Doctor>()
+            .ForMember(dest => dest.DepartmentId, opt => opt.MapFrom(src => src.DepartmentID));
 
             //Get single/list of Doctors
             CreateMap<Doctor, DoctorListDto>()
             .ForMember(dest => dest.Department, opt => opt.MapFrom(src => src.Department.Name))
+            .ForMember(dest => dest.DepartmentID, opt => opt.MapFrom(src => src.Department.Id))
 
             .ForMember(dest => dest.Appointments, opt => opt.MapFrom(src => src.Appointments.Where(x => x.Doctor.Id == src.Id)
             .Select(x => new { x.ResevtionDate, x.AppointmentStatus }).ToList()));

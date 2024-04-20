@@ -16,16 +16,14 @@ namespace ApplicationCore.Departments.Queries.GetAllDepartments
         public async Task<ResponseResult<List<DepartmentListDto>>> Handle(GetAllDepartmentQuery request, CancellationToken cancellationToken)
         {
             var Alldepts = await _departmentReposiroty.GetAllAsync();
-            var result = _mapper.Map<List<DepartmentListDto>>(Alldepts);
-            return ResponseHandler.Success(result);
+            return ResponseHandler.Success(_mapper.Map<List<DepartmentListDto>>(Alldepts));
         }
 
         public async Task<ResponseResult<DepartmentListDto>> Handle(GetDepartmentById request, CancellationToken cancellationToken)
         {
             var dept = await _departmentReposiroty.GetDepartmentByIdAsync(request.Id);
             if (dept is null) return ResponseHandler.NotFound<DepartmentListDto>("No Department Found");
-            var result = _mapper.Map<DepartmentListDto>(dept);
-            return ResponseHandler.Success(result);
+            return ResponseHandler.Success(_mapper.Map<DepartmentListDto>(dept));
         }
     }
 

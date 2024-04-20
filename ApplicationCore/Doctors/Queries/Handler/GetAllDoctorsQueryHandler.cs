@@ -23,7 +23,7 @@ namespace ApplicationCore.Doctors.Queries
         public async Task<ResponseResult<DoctorListDto>> Handle(DoctorQuery request, CancellationToken cancellationToken)
         {
             var doctor = await _doctorRepository.GetDoctorByIdAsync(request.Id) ?? throw new KeyNotFoundException();
-            return ResponseHandler.Success(mapper.Map<DoctorListDto>(doctor));
+            return ResponseHandler.Success(_mapper.Map<DoctorListDto>(doctor));
         }
     }
 }

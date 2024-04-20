@@ -16,14 +16,13 @@ using MediatR;
 
 namespace ApplicationCore.Doctors.Commands.AddDoctor
 {
-    public class AddDoctorCommandHandler(IDoctorRepository doctorRepository, IDepartmentRepository departmentRepository,
+    public class AddDoctorCommandHandler(IDoctorRepository doctorRepository,
     IEmail email, IMapper mapper) :
      IRequestHandler<AddDoctorCommand, ResponseResult<object>>,
      IRequestHandler<DeleteDoctorCommand, ResponseResult<string>>,
      IRequestHandler<UpdateDoctorCommand, ResponseResult<object>>
     {
         private readonly IDoctorRepository _doctorRepository = doctorRepository;
-        private readonly IDepartmentRepository _departmentRepository = departmentRepository;
         private readonly IEmail _email = email;
         private readonly IMapper _mapper = mapper;
 
@@ -31,25 +30,19 @@ namespace ApplicationCore.Doctors.Commands.AddDoctor
         {
             var validator = new AddDoctorCommandValidation();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
-
             if (!validationResult.IsValid) return ResponseHandler.ValidtionErrors<object>(validationResult.Errors[0].ToString());
 
             var newDoctor = _mapper.Map<Doctor>(request);
-
-            if (await _doctorRepository.GetAsync(newDoctor.Id) is not null) return ResponseHandler.Conflicted<object>("this Doctor is exist");
             await _doctorRepository.InsertAsync(newDoctor);
 
-            var dept = await _departmentRepository.GetFirstAsync(x => x.Id == request.DepartmentID);
-            if (dept is not null)
-                newDoctor.Department = dept;
+            var doctor = await _doctorRepository.GetFirstAsync(x => x.Id == newDoctor.Id);
 
             // await _email.SendEmailAsync(request.Email, "Test", $"Welcome {request.Name} , this is Test");
-            return ResponseHandler.Created<object>(_mapper.Map<DoctorListDto>(newDoctor));
+            return ResponseHandler.Created<object>(_mapper.Map<DoctorListDto>(doctor));
         }
 
         public async Task<ResponseResult<string>> Handle(DeleteDoctorCommand request, CancellationToken cancellationToken)
         {
-            // if (await _doctorRepository.GetAsync(request.Id) is null) return ResponseHandler.NotFound<string>("No Department with this Id");
             await _doctorRepository.DeleteAsync(request.Id);
             return ResponseHandler.Success("Doctor Deleted Successfully");
         }
@@ -63,14 +56,10 @@ namespace ApplicationCore.Doctors.Commands.AddDoctor
             var doctor = await _doctorRepository.GetAsync(request.Id);
             if (doctor is null) return ResponseHandler.NotFound<object>("this Doctor dose not exist");
 
-            var UpdatedDoctor = _mapper.Map<Doctor>(request);
+            var MappingDoctor = _mapper.Map<Doctor>(request);
+            await _doctorRepository.UpdateAsync(request.Id, MappingDoctor);
 
-            await _doctorRepository.UpdateAsync(request.Id, UpdatedDoctor);
-
-            var dept = await _departmentRepository.GetFirstAsync(x => x.Id == request.DepartmentID);
-            if (dept is not null)
-                UpdatedDoctor.Department = dept;
-
+            var UpdatedDoctor = await _doctorRepository.GetFirstAsync(x => x.Id == request.Id);
             return ResponseHandler.Success<object>(_mapper.Map<DoctorListDto>(UpdatedDoctor));
 
         }

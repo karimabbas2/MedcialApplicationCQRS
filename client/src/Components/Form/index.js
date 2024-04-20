@@ -7,6 +7,7 @@ import {
 
 import { DepartmentForm } from './DepartmentForm/DepartmentForm';
 import DoctorForm from './DoctorForm/DoctorForm';
+import AppointmentForm from './AppointmentForm/AppointmentForm';
 
 const MyForm = (props) => {
 
@@ -16,7 +17,7 @@ const MyForm = (props) => {
         else if (name === 'Department')
             return DepartmentForm
         else if (name === 'Appointment')
-            return DepartmentForm
+            return AppointmentForm
 
     }
     const FormComponent = handleForm(props.name);

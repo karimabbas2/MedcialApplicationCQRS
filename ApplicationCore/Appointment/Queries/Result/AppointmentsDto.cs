@@ -10,7 +10,7 @@ namespace ApplicationCore.Appointment.Queries.GetAllApointment
 {
     public class AppointmentsDto
     {
-        public int? Id {get;set;}
+        public string? Id {get;set;}
         public string? ResevtionDate { get; set; }
         public AppointmentStatus AppointmentStatus { get; set; }
         public string? PatientName { get; set; }
@@ -18,7 +18,9 @@ namespace ApplicationCore.Appointment.Queries.GetAllApointment
         public string? PatientEmail { get; set; }
         public string? PatientNotes { get; set; }
         public string? CreadtedAt { get; set; }
-        public string? Doctor { get; set; }
+        public string? DoctorId { get; set; }
+        public string? DoctorName { get; set; }
+
 
     }
 }

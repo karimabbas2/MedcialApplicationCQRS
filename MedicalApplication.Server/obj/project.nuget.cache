@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r3nm/teEZkJwiXyVuEt5CnBpchEIMBi1PPtU5Jw5actPjUw0e+aKKvm9O0RNvql0zxq5WJdrLaldLXzgVY8pRQ==",
+  "dgSpecHash": "oXT7pnQRL76kjqyP8Gz6JdjJ8KbCiyLMKogBh6xk//h0KC3VgZs3Zzku4Sfeio10Lyh8ETQwNDh6M9GVSB78YA==",
   "success": true,
   "projectFilePath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
   "expectedPackageFiles": [
@@ -287,5 +287,12 @@
     "C:\\Users\\20115\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\20115\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://api.nuget.org/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

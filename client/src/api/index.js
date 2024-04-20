@@ -20,3 +20,6 @@ export const UpdateDoctor = (doctor) => API.put('/Doctor', doctor);
 
 //Appoinmtnets
 export const GetAllAppointments = () => API.get('/Appointment');
+export const PostAppointment = (newAppointment) => API.post('/Appointment', newAppointment);
+export const DeleteAppointment = (id) => API.delete(`/Appointment/${id}`);
+export const UpdateAppointment = (appointment) => API.put('/Appointment', appointment);

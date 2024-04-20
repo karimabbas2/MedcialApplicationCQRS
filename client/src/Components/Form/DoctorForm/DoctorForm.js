@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
 import {
-    PageWrapper,
-    Title,
     Label,
     CustomInput,
     StyledInlineErrorMessage,
     Submit,
 } from "../styles";
-import { Phone } from 'react-feather';
 import { Form, Formik } from 'formik';
-import { Button, Container, Col, Row, Input } from 'reactstrap';
+import { Button, Col, Row, Input } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDoctor, updateDoctor } from '../../Doctor/store/action';
 import { getAllDepts } from '../../Department/store/action';
@@ -31,10 +28,10 @@ const DoctorForm = (props) => {
         phone: '',
         email: '',
         imageURL: '',
-        DepartmentID: ''
+        department: ''
     })
 
-    const docInputsSchema = yup.object({
+    const docInputsSchema = yup.object().shape({
         name: yup.string().required("Doctor Name is requierd").min(3),
         title: yup.string().required("Title is Requierd").min(3),
         phone: yup.number().required("Phone is Requierd").min(3),
@@ -58,15 +55,11 @@ const DoctorForm = (props) => {
             phone: '',
             email: '',
             imageURL: '',
-            DepartmentID: []
+            department: '',
+            DepartmentID: ''
         });
         props.refresh()
     }
-
-    // const handleSelectedDept = (e) => {
-    //     console.log((e.target.value));
-    //     setDoctorInputs({ ...doctorInputs, DepartmentID: e.target.value })
-    // }
 
     useEffect(() => {
         dispatch(getAllDepts())
@@ -75,27 +68,41 @@ const DoctorForm = (props) => {
 
     useEffect(() => {
         if (props.selectedItem) {
-            setDoctorInputs({ ...doctorInputs, ...props.selectedItem })
+            setDoctorInputs({
+                id: props.selectedItem.id,
+                name: props.selectedItem.name,
+                surname: props.selectedItem.surname,
+                title: props.selectedItem.title,
+                description: props.selectedItem.description,
+                education: props.selectedItem.education,
+                experience: props.selectedItem.experience,
+                fee: props.selectedItem.fee,
+                phone: props.selectedItem.phone,
+                email: props.selectedItem.email,
+                imageURL: props.selectedItem.imageURL,
+                department: props.selectedItem.department,
+                departmentID: props.selectedItem.departmentID
+            })
         }
 
     }, [props.selectedItem]);
 
     const handleSubmit = (values) => {
-        // console.log(props.selectedItem);
-        // if (props.selectedItem) {
-        //     dispatch(updateDoctor(doctorInputs))
-        // } else {
-        dispatch(addDoctor(doctorInputs))
-        // }
-        resetForm();
+        if (props.selectedItem) {
+            dispatch(updateDoctor(doctorInputs))
+            resetForm();
+        } else {
+            dispatch(addDoctor(doctorInputs))
+            resetForm();
+        }
     }
 
     return (
         <>
-
             <Formik
                 initialValues={doctorInputs}
                 validationSchema={docInputsSchema}
+                enableReinitialize={true}
                 onSubmit={(values, resetForm) => {
                     handleSubmit(values);
                     resetForm();
@@ -104,15 +111,13 @@ const DoctorForm = (props) => {
                 {({ errors, touched, isValid }) => (
 
                     <Form>
-
                         <Row>
                             <Col xs="6">
                                 <CustomInput
                                     name="name"
                                     type="text"
                                     value={doctorInputs.name}
-                                    onInput={handleData}
-                                    // onChange={ handleData}
+                                    onChange={handleData}
                                     autoCorrect="off"
                                     placeholder="Doctor Name"
                                     valid={touched.name && !errors.name}
@@ -127,8 +132,7 @@ const DoctorForm = (props) => {
                                     name="surname"
                                     type="text"
                                     value={doctorInputs.surname}
-                                    onInput={handleData}
-                                    // onChange={ handleData}
+                                    onChange={handleData}
                                     autoCorrect="off"
                                     placeholder="Doctor Surname"
                                     valid={touched.surname && !errors.surname}
@@ -146,8 +150,7 @@ const DoctorForm = (props) => {
                                         name="title"
                                         type="text"
                                         value={doctorInputs.title}
-                                        onInput={handleData}
-                                        // onChange={ handleData}
+                                        onChange={handleData}
                                         autoCorrect="off"
                                         placeholder="Doctor Title"
                                         valid={touched.title && !errors.title}
@@ -164,8 +167,7 @@ const DoctorForm = (props) => {
                                         name="education"
                                         type="text"
                                         value={doctorInputs.education}
-                                        onInput={handleData}
-                                        // onChange={ handleData}
+                                        onChange={handleData}
                                         autoCorrect="off"
                                         placeholder="Doctor Education"
                                         valid={touched.education && !errors.education}
@@ -185,8 +187,7 @@ const DoctorForm = (props) => {
                                         name="experience"
                                         type="text"
                                         value={doctorInputs.experience}
-                                        onInput={handleData}
-                                        // onChange={ handleData}
+                                        onChange={handleData}
                                         autoCorrect="off"
                                         placeholder="Doctor Experience"
                                         valid={touched.experience && !errors.experience}
@@ -199,11 +200,11 @@ const DoctorForm = (props) => {
                             <Col xs="6">
                                 <Label htmlFor="Phone">
                                     <CustomInput
+                                        number
                                         name="phone"
                                         type="text"
                                         value={doctorInputs.phone}
-                                        onInput={handleData}
-                                        // onChange={ handleData}
+                                        onChange={handleData}
                                         autoCorrect="off"
                                         placeholder="Doctor Phone"
                                         valid={touched.phone && !errors.phone}
@@ -219,11 +220,11 @@ const DoctorForm = (props) => {
                             <Col xs="6">
                                 <Label htmlFor="Email">
                                     <CustomInput
+                                        email
                                         name="email"
-                                        type="text"
+                                        type="email"
                                         value={doctorInputs.email}
-                                        onInput={handleData}
-                                        // onChange={ handleData}
+                                        onChange={handleData}
                                         autoCorrect="off"
                                         placeholder="Doctor Email"
                                         valid={touched.email && !errors.email}
@@ -238,10 +239,9 @@ const DoctorForm = (props) => {
                                 <Label htmlFor="Fee">
                                     <CustomInput
                                         name="fee"
-                                        type="text"
+                                        type="number"
                                         value={doctorInputs.fee}
-                                        onInput={handleData}
-                                        // onChange={ handleData}
+                                        onChange={handleData}
                                         autoCorrect="off"
                                         placeholder="Doctor Fee"
                                         valid={touched.fee && !errors.fee}
@@ -255,14 +255,15 @@ const DoctorForm = (props) => {
                         <Row className='mt-3 w-100 ms-0'>
                             <Input
                                 id="exampleSelect"
-                                name="DepartmentID"
+                                name="departmentID"
                                 type="select"
-                                onInput={handleData}
+                                onChange={handleData}
 
                             >
                                 <option value={null}>choose Department</option>
                                 {AllDepts.data?.map((dept) => (
-                                    <option value={dept.id}>{dept.name}</option>
+
+                                    <option key={dept.id} value={dept.id} selected={doctorInputs.departmentID === dept.id} >{dept.name}</option>
                                 ))}
                             </Input>
                         </Row>
@@ -274,8 +275,7 @@ const DoctorForm = (props) => {
                                     name="description"
                                     type="text"
                                     value={doctorInputs.description}
-                                    onInput={handleData}
-                                    // onChange={ handleData}
+                                    onChange={handleData}
                                     autoCorrect="off"
                                     placeholder="Description"
                                     valid={touched.description && !errors.description}

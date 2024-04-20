@@ -8,10 +8,11 @@ const Scrolling = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-export const AppoinmtnetColumns = () => [
+export const AppoinmtnetColumns = (handleDelete) => [
     {
         name: '#',
-        selector: row => row.id.slice(1,6),
+        width: '80px',
+        selector: row => row.id.slice(1, 6),
     },
     {
         name: 'Patient',
@@ -22,48 +23,30 @@ export const AppoinmtnetColumns = () => [
         selector: row => row.patientPhone,
     },
     {
-        name: 'Email',
-        selector: row => row.patientEmail,
-    },
-    {
         name: 'Doctor',
-        selector: row => row.doctor,
-    },
-    {
-        name: 'Status',
-        selector: row => {
-            return (
-                <>
-                    <FormGroup switch>
-                        <Input size={4} type="switch" checked role="switch" />
-                    </FormGroup>
-                </>
-            )
-        },
+        selector: row => row.doctorName,
     },
     {
         name: 'Resevtion Date',
+        width: '190px',
         selector: row => {
             return new Date(row.resevtionDate).toLocaleString()
         }
     },
     {
-        name: 'Notes',
-        cell: row => {
+        name: 'Status',
+        selector: row => {
+            const status = row.appointmentStatus
             return (
-                <div className='d-flex'>
-                    <UncontrolledDropdown size='1' className="me-2" direction='start'>
-                        <DropdownToggle className='pr-1' tag='span'>
-                            <MoreVertical size={30} />
-                        </DropdownToggle>
-                        <DropdownMenu end>
-                            <span className='align-middle mt-50 text-danger'>{row.patientNotes}</span>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
-                </div>
+                <>
+                    {status === 0 ? <span className=' text-danger'>Waiting</span> :
+                        <span className=' text-success'>Ended</span>
+                    }
+                </>
             )
-        }
+        },
     },
+
     {
         name: 'Actions',
         cell: row => {
@@ -75,7 +58,7 @@ export const AppoinmtnetColumns = () => [
                         </DropdownToggle>
                         <DropdownMenu end>
 
-                            <Link to={`/show_department/${row.id}`}>
+                            <Link to={`/Appointment/${row.id}`}>
                                 <DropdownItem onClick={Scrolling} className='w-100'>
                                     <Edit size={15} className='text-warning' />
                                     <span className='align-middle ml-50'>Edit</span>
@@ -83,7 +66,7 @@ export const AppoinmtnetColumns = () => [
                             </Link>
 
                             <DropdownItem onClick={() => {
-                                // handleDelete({id: row.id})
+                                handleDelete(row.id)
                             }} className='w-100'>
                                 <Trash size={15} className=' text-danger' />
                                 <span className='align-middle ml-50'>Delete</span>

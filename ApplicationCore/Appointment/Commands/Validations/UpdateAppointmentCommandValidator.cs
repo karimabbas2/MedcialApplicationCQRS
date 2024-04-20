@@ -2,14 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.Appointment.Commands.Command;
 using FluentValidation;
 
-namespace ApplicationCore.Appointment.Commands.AddAppointment
+namespace ApplicationCore.Appointment.Commands.Validations
 {
-    public class MakeAppointmentCommandValidator : AbstractValidator<MakeAppointmentCommand>
+    public class UpdateAppointmentCommandValidator : AbstractValidator<UpdateAppointmentCommand>
     {
-        public MakeAppointmentCommandValidator()
+        public UpdateAppointmentCommandValidator()
         {
+
             RuleFor(x => x.ResevtionDate)
             .NotEmpty().WithMessage("Date is Requerid")
             .Must(IsValidDate).WithMessage("Reservation must be greater than today");

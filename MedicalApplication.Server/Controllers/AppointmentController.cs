@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApplicationCore.Appointment.Commands.AddAppointment;
+using ApplicationCore.Appointment.Commands.Command;
 using ApplicationCore.Appointment.Queries.GetAllApointment;
 using ApplicationCore.Exceptions;
 using ApplicationCore.HandleResponse;
@@ -34,6 +35,18 @@ namespace MedicalApplication.Server.Controllers
             {
                 return BadRequest($"Error Message : {ex.Message}");
             }
+        }
+
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> DeleteAppointment([FromRoute] string Id)
+        {
+            return MyResponseResult(await Mediator.Send(new DeleteAppointmentCommand(Id)));
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateDept([FromBody] UpdateAppointmentCommand updateAppointmentCommand)
+        {
+            return MyResponseResult(await Mediator.Send(updateAppointmentCommand));
         }
 
     }

@@ -29,11 +29,8 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
             if (!validationResult.IsValid) return ResponseHandler.ValidtionErrors<object>(validationResult.Errors[0].ToString());
 
             var department = _mapper.Map<Department>(request);
-
-            if (await _departmentReposiroty.GetAsync(department.Id) is not null)
-                return ResponseHandler.Conflicted<object>("this Departments is exist");
-
             await _departmentReposiroty.InsertAsync(department);
+            
             return ResponseHandler.Created<object>(_mapper.Map<DepartmentListDto>(department));
 
         }
@@ -58,7 +55,6 @@ namespace ApplicationCore.Departments.Commands.AddDepartment
         //Delete Command
         public async Task<ResponseResult<string>> Handle(DeleteDepartmentCommand request, CancellationToken cancellationToken)
         {
-            // if (await _departmentReposiroty.GetAsync(request.Id) is null) return ResponseHandler.NotFound<string>("No Department with this Id");
             await _departmentReposiroty.DeleteAsync(request.Id);
             return ResponseHandler.Success("Department Deleted Successfully");
         }

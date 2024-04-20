@@ -1,4 +1,4 @@
-c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.deps.json
+C:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.deps.json
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationCore.pdb
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\bin\Debug\net8.0\ApplicationDomain.dll
@@ -9,8 +9,8 @@ c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\Appli
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfo.cs
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.csproj.CoreCompileInputs.cache
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.sourcelink.json
-c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\Applicat.71DDEAC9.Up2Date
+C:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\Applicat.71DDEAC9.Up2Date
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\refint\ApplicationCore.dll
 c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ApplicationCore.pdb
-c:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ref\ApplicationCore.dll
+C:\Users\20115\Desktop\MedicalApplication\ApplicationCore\obj\Debug\net8.0\ref\ApplicationCore.dll

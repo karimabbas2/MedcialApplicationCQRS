@@ -8,6 +8,7 @@ using ApplicationDomain;
 using ApplicationPersistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
+using System.Linq.Expressions;
 
 namespace ApplicationPersistence.Repositories
 {
@@ -25,7 +26,12 @@ namespace ApplicationPersistence.Repositories
 
         public async Task<Appointment> GetLastAppointment()
         {
-            return await _myDbContext.Appointments.Include(x => x.Doctor).OrderBy(x=>x.Id).FirstOrDefaultAsync();
+            return await _myDbContext.Appointments.Include(x => x.Doctor).OrderBy(x => x.Id).FirstOrDefaultAsync();
+        }
+
+        public async Task<ApplicationDomain.Appointment> GetFirstAsync(Expression<Func<Appointment, bool>> expression)
+        {
+            return await _myDbContext.Appointments.Include(x => x.Doctor).FirstOrDefaultAsync(expression);
         }
     }
 

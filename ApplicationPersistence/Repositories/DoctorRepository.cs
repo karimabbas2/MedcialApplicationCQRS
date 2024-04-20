@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using ApplicationCore.Interfaces;
 using ApplicationDomain;
 using ApplicationPersistence.Context;
@@ -20,7 +21,6 @@ namespace ApplicationPersistence.Repositories
             .Include(x => x.Appointments)
             .Include(d => d.Department)
             .ToListAsync();
-
         }
 
         public Doctor GetDoctorById(string id)
@@ -33,6 +33,11 @@ namespace ApplicationPersistence.Repositories
             return await _myDbContext.Doctors.AsNoTracking().Where(x => x.Id == id)
             .Include(x => x.Appointments)
             .Include(x => x.Department).FirstOrDefaultAsync();
+        }
+
+        public async Task<Doctor> GetFirstAsync(Expression<Func<Doctor, bool>> expression)
+        {
+            return await _myDbContext.Doctors.Include(x => x.Appointments).FirstOrDefaultAsync(expression);
         }
     }
 }

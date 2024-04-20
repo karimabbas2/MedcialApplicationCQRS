@@ -9,7 +9,7 @@ import Header from '../Header';
 import Footer from '../Footer'
 import { deleteDept, getAllDepts } from '../Department/store/action';
 import { deleteDoctor, getAllDoctors } from '../Doctor/store/action';
-import { getAllAppoint } from '../Appointment/store/action';
+import { deleteAppointment, getAllAppoint } from '../Appointment/store/action';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useNavigate } from "react-router-dom";
@@ -62,6 +62,8 @@ const Home = () => {
                 dispatch(deleteDept(Id))
             else if (name === 'Doctor')
                 dispatch(deleteDoctor(Id))
+            else if (name === 'Appointment')
+                dispatch(deleteAppointment(Id))
         })
     }
 
@@ -80,21 +82,32 @@ const Home = () => {
 
     useEffect(() => {
         // console.log("ok")
-        dispatch({
-            type: 'Get_Dept',
-            id
-        })
-        // dispatch({
-        //     type: 'Get_Doctor',
-        //     id
-        // })
-    }, [id])
+        if (name === 'Department') {
+            dispatch({
+                type: 'Get_Dept',
+                id
+            })
+        }
+        else if (name === 'Doctor') {
+            dispatch({
+                type: 'Get_Doctor',
+                id
+            })
+        }
+        else if (name === 'Appointment') {
+            dispatch({
+                type: 'Get_Appointment',
+                id
+            })
+        }
+
+    }, [dispatch, id, name])
 
     const Refresh = () => {
         navigate(`/${name}`)
     };
 
-    console.log(myStore)
+    // console.log(myStore)
 
     return (
         <>
