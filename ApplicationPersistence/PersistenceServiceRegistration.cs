@@ -3,6 +3,7 @@ using ApplicationCore.interfaces;
 using ApplicationCore.Interfaces;
 using ApplicationCore.Interfaces.Email;
 using ApplicationCore.Interfaces.Invoice;
+using ApplicationCore.User.Commands.Register;
 using ApplicationDomain;
 using ApplicationInfrastructure.EmailService;
 using ApplicationInfrastructure.FileService;
@@ -34,7 +35,8 @@ namespace medicalapp.ApplicationPersistence
             services.AddIdentity<User, IdentityRole>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<MyDbContext>()
-            .AddDefaultTokenProviders();
+            .AddDefaultTokenProviders()
+            .AddUserValidator<CustomUserValidator<User>>();
 
 
             services.AddAuthentication(options =>

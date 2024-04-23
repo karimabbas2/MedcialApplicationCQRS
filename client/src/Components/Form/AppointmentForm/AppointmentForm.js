@@ -18,7 +18,6 @@ const AppointmentForm = (props) => {
 
     const dispatch = useDispatch();
     const CurrentDate = new Date().toLocaleString();
-    const adllDoctors = useSelector(state => state.DoctorsStore);
 
     const [appointmentInput, setAppointmentInput] = useState({
         patientName: '',
@@ -27,7 +26,7 @@ const AppointmentForm = (props) => {
         patientNotes: '',
         appointmentStatus: '',
         resevtionDate: '',
-        doctorId: ''
+        doctorId: props.doctorId
     })
     const appointmentInputSchema = yup.object().shape({
         patientName: yup.string().required("Name is Requierd").min(3),
@@ -36,9 +35,6 @@ const AppointmentForm = (props) => {
         resevtionDate: yup.date().required().min(CurrentDate, "Resevtion Date Must be greater than today"),
     })
 
-    useEffect(() => {
-        dispatch(getAllDoctors())
-    }, [dispatch]);
 
     const handleData = (e) => {
         setAppointmentInput({ ...appointmentInput, [e.target.name]: e.target.value })
@@ -100,7 +96,7 @@ const AppointmentForm = (props) => {
 
                     <Form>
                         <Row>
-                            <Col xs="6">
+                            <Col xs="12">
                                 <CustomInput
                                     name="patientName"
                                     type="text"
@@ -114,6 +110,9 @@ const AppointmentForm = (props) => {
                                 {errors.patientName && touched.patientName ? <StyledInlineErrorMessage>{errors.patientName}</StyledInlineErrorMessage> : null}
                             </Col>
 
+
+                        </Row>
+                        <Row>
                             <Col xs="6">
                                 <CustomInput
                                     name="patientPhone"
@@ -128,8 +127,6 @@ const AppointmentForm = (props) => {
                                 {errors.patientPhone && touched.patientPhone ? <StyledInlineErrorMessage>{errors.patientPhone}</StyledInlineErrorMessage> : null}
 
                             </Col>
-                        </Row>
-                        <Row>
                             <Col xs="6">
                                 <CustomInput
                                     name="patientEmail"
@@ -146,9 +143,11 @@ const AppointmentForm = (props) => {
 
                             <Col xs="6" className='mt-3'>
                                 <Input
+                                    hidden
                                     id="exampleSelect"
                                     name="appointmentStatus"
                                     type="select"
+                                    value='Waiting'
                                     onChange={handleData}
                                 >
                                     <option value='Waiting'>Waiting</option>
@@ -175,15 +174,12 @@ const AppointmentForm = (props) => {
                         </Row>
                         <Row className='mt-3 w-100 ms-0'>
                             <Input
+                                hidden
                                 id="exampleSelect"
                                 name="doctorId"
-                                type="select"
-                                onChange={handleData}
+                                type="text"
+                                value={appointmentInput.doctorId}
                             >
-                                <option value={null}>choose Doctor</option>
-                                {adllDoctors.data?.map((doc) => (
-                                    <option key={doc.id} value={doc.id} selected={appointmentInput.doctorId === doc.id} >{doc.name}</option>
-                                ))}
                             </Input>
                         </Row>
                         <Row className='mt-3 w-100 ms-0'>

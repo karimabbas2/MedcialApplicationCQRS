@@ -37,7 +37,7 @@ namespace ApplicationPersistence.Repositories
 
         public async Task<Doctor> GetFirstAsync(Expression<Func<Doctor, bool>> expression)
         {
-            return await _myDbContext.Doctors.Include(x => x.Appointments).FirstOrDefaultAsync(expression);
+            return await _myDbContext.Doctors.Include(x => x.Department).FirstOrDefaultAsync(expression);
         }
     }
 }

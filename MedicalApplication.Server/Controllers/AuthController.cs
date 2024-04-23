@@ -42,7 +42,8 @@ namespace MedicalApplication.Server.Controllers
                 var link = await GenerateEmailConfirmationLinkAsync(result._User);
                 var msgHtml = $"<lable>Please click the link for confirm Email address:</lable><a href='{link}'>Confirm Email</a>";
                 await _emailService.SendEmailAsync(result._User.Email, "Confirmation Email(WebBeautyBook)", msgHtml);
-                return Ok($"Welcome {result._User.UserName}, We have sent Email Confirmation to You");
+                // return Ok($"Welcome {result._User.UserName}, We have sent Email Confirmation to You");
+                return Ok(result._User);
             }
             catch (CustomValidationException ex)
             {
@@ -69,12 +70,13 @@ namespace MedicalApplication.Server.Controllers
                 var result = await Mediator.Send(loginCommand);
                 if (result._ISuccess)
                 {
-                    var GenerateToken = await _jwtService.GenerateToken(result._Message);
+                    var GenerateToken = await _jwtService.GenerateToken(result._User.Id);
                     return Ok(new
                     {
                         AccsessToken = GenerateToken.Token,
                         RefreshToken = GenerateToken.RefreshToken?.Token,
-                        ExpireDate = GenerateToken.TokenExpire
+                        ExpireDate = GenerateToken.TokenExpire,
+                        user=result._User,
                     });
                 }
                 return BadRequest();

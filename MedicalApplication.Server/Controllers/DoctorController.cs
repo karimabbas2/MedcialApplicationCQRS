@@ -3,6 +3,7 @@ using ApplicationCore.Doctors.Commands.AddDoctor;
 using ApplicationCore.Doctors.Queries;
 using ApplicationCore.Doctors.Queries.GetlDoctorById;
 using MedicalApplication.Server.Controllers.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalApplication.Server.Controllers
@@ -18,7 +19,7 @@ namespace MedicalApplication.Server.Controllers
             return MyResponseResult(await Mediator.Send(addDoctorCommand));
         }
         [HttpGet]
-        // [Authorize(Roles = "client")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetAllDoctors()
         {
             try

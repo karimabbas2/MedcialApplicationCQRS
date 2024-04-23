@@ -32,7 +32,6 @@ export const DepartmentForm = (props) => {
             details: ''
         });
         props.refresh()
-
     }
 
     useEffect(() => {
@@ -116,7 +115,6 @@ export const DepartmentForm = (props) => {
                     )
                 }
                 }
-
 
             </Formik>
         </>

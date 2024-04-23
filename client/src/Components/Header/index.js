@@ -3,9 +3,12 @@ import MyNavbar from '../Navbar';
 import Cards from '../Cards';
 
 const Header = () => {
+
+    const user = localStorage.getItem("UserToken");
+
     return (
         <>
-            <MyNavbar />
+            <MyNavbar user={user} />
             <Cards />
         </>
     );

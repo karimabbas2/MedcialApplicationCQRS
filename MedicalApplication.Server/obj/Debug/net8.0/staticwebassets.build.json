@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "pQOGHOAl4aU7+k4tDMSGJvvCnEeaG5nrLxPjCN2LfP8=",
+  "Hash": "7evZWnz7czc8mSQ3S6a4RTM3kWdXJIfqnE3xKuuS/ew=",
   "Source": "MedicalApplication.Server",
   "BasePath": "_content/MedicalApplication.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\20115\\Desktop\\MedicalApplication\\medicalapplication.client\\medicalapplication.client.esproj",
+      "Identity": "c:\\Users\\20115\\Desktop\\MedicalApplication\\medicalapplication.client\\medicalapplication.client.esproj",
       "Version": 2,
       "Source": "medicalapplication.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

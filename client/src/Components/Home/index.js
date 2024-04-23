@@ -104,7 +104,7 @@ const Home = () => {
     }, [dispatch, id, name])
 
     const Refresh = () => {
-        navigate(`/${name}`)
+        navigate(`/admin/Dashboard/${name}`)
     };
 
     // console.log(myStore)

@@ -75,11 +75,11 @@ export const deleteDept = (id) => async (dispatch) => {
                 })
             }
         }
-    }).catch(() => {
+    }).catch((err) => {
         MySwal.fire({
             icon: 'error',
             title: 'Faild!',
-            text: 'Faild to delete , Bad Request',
+            text: `Faild to delete , Bad Request , ${err.response.data.title}`,
             customClass: {
                 confirmButton: 'btn btn-danger'
             }
@@ -107,11 +107,11 @@ export const addDept = (dept) => {
                     data,
                 })
             }
-        }).catch(() => {
+        }).catch((err) => {
             MySwal.fire({
                 icon: 'error',
                 title: 'Faild!',
-                text: 'Faild to delete , Bad Request',
+                text: `Faild to Create , Bad Request , ${err.response.data.title}`,
                 customClass: {
                     confirmButton: 'btn btn-danger'
                 }
@@ -140,11 +140,11 @@ export const updateDept = (dept) => {
                     data,
                 })
             }
-        }).catch(() => {
+        }).catch((err) => {
             MySwal.fire({
                 icon: 'error',
                 title: 'Faild!',
-                text: 'Faild to Modify , Bad Request',
+                text: `Faild to Modifay , Bad Request , ${err.response.data.title}`,
                 customClass: {
                     confirmButton: 'btn btn-danger'
                 }

@@ -70,7 +70,7 @@ export const DepartmentColumns = (handleDelete) => [
                         </DropdownToggle>
                         <DropdownMenu end>
 
-                            <Link to={`/Department/${row.id}`}>
+                            <Link to={`/admin/Dashboard/Department/${row.id}`}>
                                 <DropdownItem onClick={Scrolling} className='w-100'>
                                     <Edit size={15} className='text-warning' />
                                     <span className='align-middle ml-50'>Edit</span>
