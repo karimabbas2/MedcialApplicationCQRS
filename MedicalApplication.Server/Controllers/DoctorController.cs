@@ -2,6 +2,7 @@ using ApplicationCore.Doctors.Command.Commands;
 using ApplicationCore.Doctors.Commands.AddDoctor;
 using ApplicationCore.Doctors.Queries;
 using ApplicationCore.Doctors.Queries.GetlDoctorById;
+using ApplicationCore.Doctors.Queries.Queries;
 using MedicalApplication.Server.Controllers.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace MedicalApplication.Server.Controllers
             return MyResponseResult(await Mediator.Send(addDoctorCommand));
         }
         [HttpGet]
-        [Authorize(Roles = "admin")]
+        // [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetAllDoctors()
         {
             try
@@ -30,6 +31,19 @@ namespace MedicalApplication.Server.Controllers
             {
                 // return BadRequest(new ServiceResponse(false, $"Error Message : {ex.Message}"));
                 throw;
+            }
+        }
+
+        [HttpGet("WithSP")]
+        public async Task<IActionResult> GetAllDeptWithSP()
+        {
+            try
+            {
+                return MyResponseResult(await Mediator.Send(new GetAllDeptDoctorsWithSP()));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error Message : {ex.Message}");
             }
         }
 

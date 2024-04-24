@@ -22,6 +22,56 @@ namespace MedicalApplication.Server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ApplicationCore.Doctors.Queries.Results.DeptDoctorsWithSP", b =>
+                {
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DepartmentID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeptDetails")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeptName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DocName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Education")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Experience")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("Fee")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("DeptDoctorsWithSP");
+                });
+
             modelBuilder.Entity("ApplicationDomain.Appointment", b =>
                 {
                     b.Property<string>("Id")
@@ -342,13 +392,13 @@ namespace MedicalApplication.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f7396d0e-ff83-438c-9961-bddca28a9c70",
+                            Id = "046b7c94-6a70-4faa-a4f3-752e48c50f25",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "4329b7ba-9468-4f69-9a4b-85beb4b0b8a9",
+                            Id = "698f22d0-4853-47de-a56d-f1ff49122286",
                             Name = "client",
                             NormalizedName = "CLIENT"
                         });

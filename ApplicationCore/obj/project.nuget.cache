@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hs565M4xb/kRpJ0XzJ/YIIkzouyYyqBUjPIsyjnALTeUpETDUvsJhTj1knTOcD+AFPGCWdLJVPTPp4RyHNFLcA==",
+  "dgSpecHash": "nAvJuC03zgOKcLYrSOUd7ibgeOowuP7MjuoPNgOzXK6EqscueRYxMELdOwbE6feGQKhw5e49Kfja+BARHZTV+w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj",
+  "projectFilePath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\20115\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\20115\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -116,12 +116,5 @@
     "C:\\Users\\20115\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\20115\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://api.nuget.org/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

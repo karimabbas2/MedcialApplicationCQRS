@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E071D820-6299-4CAC-91DC-4E8A0F25C804}|ApplicationDomain\\ApplicationDomain.csproj|c:\\users\\20115\\desktop\\medicalapplication\\applicationdomain\\applicationdomain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E071D820-6299-4CAC-91DC-4E8A0F25C804}|ApplicationDomain\\ApplicationDomain.csproj|solutionrelative:applicationdomain\\applicationdomain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90CFF296-AFAC-4889-9A07-A7CBF491594C}|ApplicationInfrastructure\\ApplicationInfrastructure.csproj|c:\\users\\20115\\desktop\\medicalapplication\\applicationinfrastructure\\applicationinfrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{90CFF296-AFAC-4889-9A07-A7CBF491594C}|ApplicationInfrastructure\\ApplicationInfrastructure.csproj|solutionrelative:applicationinfrastructure\\applicationinfrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A628680C-6E7B-4FDA-BAE4-760D79CB42E8}|MedicalApplication.Server\\MedicalApplication.Server.csproj|c:\\users\\20115\\desktop\\medicalapplication\\medicalapplication.server\\medicalapplication.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A628680C-6E7B-4FDA-BAE4-760D79CB42E8}|MedicalApplication.Server\\MedicalApplication.Server.csproj|solutionrelative:medicalapplication.server\\medicalapplication.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A628680C-6E7B-4FDA-BAE4-760D79CB42E8}|MedicalApplication.Server\\MedicalApplication.Server.csproj|c:\\users\\20115\\desktop\\medicalapplication\\medicalapplication.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A628680C-6E7B-4FDA-BAE4-760D79CB42E8}|MedicalApplication.Server\\MedicalApplication.Server.csproj|solutionrelative:medicalapplication.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,20 +42,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationInfrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+              "RelativeDocumentMoniker": "ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+              "ToolTip": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+              "RelativeToolTip": "ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-24T14:40:27.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MedicalApplication.Server.csproj",
+              "DocumentMoniker": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
+              "RelativeDocumentMoniker": "MedicalApplication.Server\\MedicalApplication.Server.csproj",
+              "ToolTip": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.csproj",
+              "RelativeToolTip": "MedicalApplication.Server\\MedicalApplication.Server.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-24T14:40:25.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ApplicationDomain.csproj",
+              "DocumentMoniker": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+              "RelativeDocumentMoniker": "ApplicationDomain\\ApplicationDomain.csproj",
+              "ToolTip": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+              "RelativeToolTip": "ApplicationDomain\\ApplicationDomain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-24T14:40:22.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "MedicalApplication.Server\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\Properties\\launchSettings.json",
               "RelativeToolTip": "MedicalApplication.Server\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-04-05T15:11:13.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MedicalApplication.Server.http",
               "DocumentMoniker": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\MedicalApplication.Server.http",
               "RelativeDocumentMoniker": "MedicalApplication.Server\\MedicalApplication.Server.http",
@@ -56,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\20115\\Desktop\\MedicalApplication\\MedicalApplication.Server\\appsettings.Development.json",
               "RelativeDocumentMoniker": "MedicalApplication.Server\\appsettings.Development.json",

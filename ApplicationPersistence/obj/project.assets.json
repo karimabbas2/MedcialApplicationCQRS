@@ -6124,11 +6124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+      "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
       "projectName": "ApplicationPersistence",
-      "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+      "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
       "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\obj\\",
+      "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6139,17 +6139,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
-              "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
+            "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
+              "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
             },
-            "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-              "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+            "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+              "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
             },
             "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj": {
               "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj"
@@ -6220,13 +6220,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://api.nuget.org/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  }
 }

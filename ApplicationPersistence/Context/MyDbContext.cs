@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ApplicationCore.Doctors.Queries.Results;
 using ApplicationDomain;
 using ApplicationDomain.Concrets;
 using ApplicationPersistence.SeedData;
-using ApplicationPersistence.SeedData.Roles;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace ApplicationPersistence.Context
 {
     public class MyDbContext(DbContextOptions<MyDbContext> options) : IdentityDbContext<User, IdentityRole, string>(options)
@@ -27,10 +22,19 @@ namespace ApplicationPersistence.Context
             .OnDelete(DeleteBehavior.Cascade);
 
 
-            modelBuilder.Entity<Doctor>().HasQueryFilter(d => d.DeletedBy == null)
+            modelBuilder.Entity<Doctor>()
+            .HasQueryFilter(d => d.DeletedBy == null)
             .HasOne(D => D.Department)
             .WithMany(D => D.Doctors)
             .OnDelete(DeleteBehavior.SetNull);
+
+
+            ///For stored procedure
+            modelBuilder.Entity<DeptDoctorsWithSP>(entity =>
+          {
+              //no table in DB
+              entity.HasNoKey();
+          });
 
             base.OnModelCreating(modelBuilder);
         }

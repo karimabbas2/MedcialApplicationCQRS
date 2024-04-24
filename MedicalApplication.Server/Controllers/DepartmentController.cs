@@ -35,6 +35,7 @@ namespace MedicalApplication.Server.Controllers
             }
         }
 
+
         [HttpPost]
         public async Task<IActionResult> CreateDept([FromBody] AddDepartmentCommand addDepartmentCommand)
         {

@@ -1,4 +1,6 @@
 using System.Linq.Expressions;
+using ApplicationCore.Doctors.Queries;
+using ApplicationCore.Doctors.Queries.Results;
 using ApplicationCore.Interfaces;
 using ApplicationDomain;
 using ApplicationPersistence.Context;
@@ -39,5 +41,12 @@ namespace ApplicationPersistence.Repositories
         {
             return await _myDbContext.Doctors.Include(x => x.Department).FirstOrDefaultAsync(expression);
         }
+
+        public async Task<List<DeptDoctorsWithSP>> Get_all_DeptDoctors_With_SP()
+        {
+            return await _myDbContext.Set<DeptDoctorsWithSP>().FromSqlRaw("EXEC Get_all_DeptDoctors_With_SP").IgnoreQueryFilters().ToListAsync();
+        }
+
+
     }
 }

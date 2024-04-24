@@ -26,6 +26,7 @@ namespace ApplicationCore.Departments.Queries.GetAllDepartments
             if (dept is null) return ResponseHandler.NotFound<object>("No Department Found");
             return ResponseHandler.Success<object>(dept);
         }
+
     }
 
 }

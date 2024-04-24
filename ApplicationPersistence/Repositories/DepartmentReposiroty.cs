@@ -26,10 +26,5 @@ namespace ApplicationPersistence.Repositories
             .Where(x => x.Id == id)
             .Include(x => x.Doctors).FirstOrDefaultAsync();
         }
-
-        public Task SomeExteraMethod()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
