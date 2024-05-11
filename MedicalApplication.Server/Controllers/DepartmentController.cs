@@ -21,6 +21,9 @@ namespace MedicalApplication.Server.Controllers
     {
 
         // [Authorize(Roles = AppRoles.ADMIN)]
+        // [Authorize(Policy = "AdminPolicy")]
+        // [Authorize(Policy = "AdminOnly")]
+        [Authorize(Policy = "PaitentsOlderThan25")]
         [HttpGet]
         public async Task<IActionResult> GetAllDepts()
         {

@@ -13850,8 +13850,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
-              "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj"
+            "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
+              "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj"
             }
           }
         }

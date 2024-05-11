@@ -36,11 +36,14 @@ namespace ApplicationPersistence.Jwt
                        {ClaimTypes.NameIdentifier,user.Id},
                        {ClaimTypes.MobilePhone,user.PhoneNumber },
                        {ClaimTypes.Email,user.Email},
-                       {ClaimTypes.Name,user.UserName}
+                       {ClaimTypes.Name,user.UserName},
+                       {"PatientPhone",user.PhoneNumber},
+                       {"DateOFBirth","2010-1-2"}
                    };
             foreach (var role in UserRoles)
             {
                 MyClaims.Add(ClaimTypes.Role, role);
+
             }
 
             ///With Descriptor can create cllaimsidentity like this without neededto pass it as a param form authController

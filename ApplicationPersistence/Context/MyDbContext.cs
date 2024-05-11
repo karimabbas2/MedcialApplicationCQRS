@@ -50,7 +50,6 @@ namespace ApplicationPersistence.Context
         {
             foreach (var entry in base.ChangeTracker.Entries<BaseEntity>())
             {
-
                 if (entry.State == EntityState.Added)
                 {
                     entry.Entity.CreatedAt = DateTime.Now;

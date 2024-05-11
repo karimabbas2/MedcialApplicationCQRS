@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using SchoolProject.Api.Middleware;
 using Serilog;
 using Microsoft.Net.Http.Headers;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,8 +71,22 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Policy
 builder.Services.AddAuthorizationBuilder()
-    .AddPolicy("AdminPolicy", policy => policy.RequireRole("admin"));
+            //Policy Based on Role
+            .AddPolicy("AdminPolicy", policy => policy.RequireRole("admin"))
+            //Policy Based On Claim
+            .AddPolicy("PaitentHaveNumber", policy => policy.RequireClaim("PatientPhone"))
+            //Policy Based On Claim with specific vlalue
+            .AddPolicy("AdminOnly", policy => policy.RequireClaim(ClaimTypes.Role, "admin"))
+
+            //Cusome Policy 
+            .AddPolicy("PaitentsOlderThan25", policy => policy.RequireAssertion(context =>
+            {
+                var date = DateTime.Parse(context.User.FindFirstValue("DateOFBirth"));
+                return DateTime.Today.Year - date.Year >= 20;
+            }));
+
 
 //Serilog
 // Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {}
+    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {}
   },
   "projects": {
     "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
               }
             }
           }
@@ -122,14 +122,14 @@
         }
       }
     },
-    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
         "projectName": "ApplicationDomain",
-        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
+        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\obj\\",
+        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -215,8 +215,8 @@
               "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
                 "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
               },
-              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
               }
             }
           }
@@ -285,14 +285,14 @@
         }
       }
     },
-    "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
+    "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+        "projectUniqueName": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
         "projectName": "ApplicationPersistence",
-        "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
+        "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\ApplicationPersistence.csproj",
         "packagesPath": "C:\\Users\\20115\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\obj\\",
+        "outputPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationPersistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20115\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -312,8 +312,8 @@
               "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj": {
                 "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationCore\\ApplicationCore.csproj"
               },
-              "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
-                "projectPath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
+              "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj": {
+                "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationDomain\\ApplicationDomain.csproj"
               },
               "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj": {
                 "projectPath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj"

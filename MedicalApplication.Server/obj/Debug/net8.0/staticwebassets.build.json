@@ -1,20 +1,20 @@
 {
   "Version": 1,
-  "Hash": "mnAO94U5FZ3bBhfxmlAY8LBt9ws5c7/or2t6KbLFwsE=",
+  "Hash": "pQOGHOAl4aU7+k4tDMSGJvvCnEeaG5nrLxPjCN2LfP8=",
   "Source": "MedicalApplication.Server",
   "BasePath": "_content/MedicalApplication.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "c:\\Users\\20115\\Desktop\\MedicalApplication\\medicalapplication.client\\medicalapplication.client.esproj",
+      "Identity": "C:\\Users\\20115\\Desktop\\MedicalApplication\\medicalapplication.client\\medicalapplication.client.esproj",
       "Version": 2,
       "Source": "medicalapplication.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],
