@@ -15,8 +15,9 @@ namespace MedicalApplication.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AppointmentController : ApplicationControllerBase
+    public class AppointmentController(ILogger<AppointmentController> logger) : ApplicationControllerBase
     {
+        private readonly ILogger<AppointmentController> _logger = logger   ;
 
         [HttpPost]
         public async Task<IActionResult> CreateAppointment([FromBody] MakeAppointmentCommand makeAppointmentCommand)
@@ -29,6 +30,8 @@ namespace MedicalApplication.Server.Controllers
         {
             try
             {
+                _logger.LogInformation("get all appointments");
+                _logger.LogWarning("wraning los {user}","karim");
                 return MyResponseResult(await Mediator.Send(new GetAllAppointmentQuery()));
             }
             catch (Exception ex)

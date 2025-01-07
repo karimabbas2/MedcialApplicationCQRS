@@ -1364,7 +1364,10 @@
           "Serilog": "3.1.1"
         },
         "runtime": {
-          "ApplicationCore.dll": {}
+          "ApplicationCore.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ApplicationDomain/1.0.0": {
@@ -1372,7 +1375,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0"
         },
         "runtime": {
-          "ApplicationDomain.dll": {}
+          "ApplicationDomain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ApplicationInfrastructure/1.0.0": {
@@ -1388,7 +1394,10 @@
           "SendGrid": "9.29.2"
         },
         "runtime": {
-          "ApplicationInfrastructure.dll": {}
+          "ApplicationInfrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IwaY7vapDkH1lv9APyye9MWlUXhzcokWWoG4MDLAn5CaV0aWcDgcMJvHw4Bq+JSRAbU+iMN9xzcUqnzyH+CImQ==",
+  "dgSpecHash": "9rL6u1Ke8+g=",
   "success": true,
-  "projectFilePath": "c:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
+  "projectFilePath": "C:\\Users\\20115\\Desktop\\MedicalApplication\\ApplicationInfrastructure\\ApplicationInfrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\20115\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\20115\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

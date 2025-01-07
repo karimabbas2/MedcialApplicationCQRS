@@ -320,3 +320,15 @@ c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\ne
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.pdb
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\MedicalApplication.Server.genruntimeconfig.cache
 c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\obj\Debug\net8.0\ref\MedicalApplication.Server.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Google.Protobuf.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\MySql.Data.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\Serilog.Sinks.MySQL.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+c:\Users\20115\Desktop\MedicalApplication\MedicalApplication.Server\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
